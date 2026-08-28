@@ -1,0 +1,556 @@
+/* ============ PPA SECTION 2 - BRAND & PRODUCTION ============ */
+.ppa-section2 {
+  position: relative;
+  padding: 60px 0;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+/* Background Decorative */
+.ppa-section2::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(51, 124, 199, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ppa-section2::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232, 172, 73, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ppa-section2-wrapper {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: 60px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ LEFT CONTENT ============ */
+.ppa-section2-content {
+  position: relative;
+  padding-top: 20px;
+}
+
+.ppa-section2-eyebrow-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ppa-section2-eyebrow-line {
+  width: 40px;
+  height: 3px;
+ background: linear-gradient(
+    90deg,
+    var(--color-accent-blue) 0%,
+    var(--color-accent-blue) 33.33%,
+    var(--color-accent-magenta) 33.33%,
+    var(--color-accent-magenta) 66.66%,
+    var(--color-accent-yellow) 66.66%,
+    var(--color-accent-yellow) 100%
+  );
+    border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.ppa-section2-eyebrow {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent-magenta);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+.ppa-section2-title {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: #1D1D1D;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+  font-family: var(--font-family-heading);
+}
+
+.ppa-section2-title-accent {
+  background: linear-gradient(135deg, var(--color-accent-blue) 0%, var(--color-accent-magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.ppa-section2-body {
+  font-size: var(--font-size-base);
+  color: #1D1D1D;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  font-family: var(--font-family-body2);
+  font-weight: var(--font-weight-regular);
+  max-width: 480px;
+}
+
+/* Premium 3D Button */
+.ppa-section2-btn {
+  padding: 14px 32px;
+  font-size: var(--font-size-sm);
+  letter-spacing: 1.5px;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-semibold);
+  background: linear-gradient(135deg, var(--color-accent-blue) 0%, #2a68a8 100%);
+  color: #FFFFFF;
+  border: none;
+  position: relative;
+  transition: all var(--transition-normal);
+  box-shadow: 
+    0 4px 15px rgba(51, 124, 199, 0.3),
+    0 8px 30px rgba(51, 124, 199, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.ppa-section2-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  border-radius: var(--radius-full) var(--radius-full) 50% 50%;
+  pointer-events: none;
+}
+
+.ppa-section2-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 25px rgba(51, 124, 199, 0.4),
+    0 15px 45px rgba(51, 124, 199, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #2a68a8 0%, var(--color-accent-blue) 100%);
+  color: #FFFFFF;
+}
+
+.ppa-section2-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 2px 8px rgba(51, 124, 199, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ============ RIGHT COLLAGE - DIAGONAL STAIRCASE ============ */
+.ppa-section2-collage {
+  position: relative;
+  min-height: 550px;
+  padding-top: 80px;
+  padding-left: 20px;
+}
+
+.ppa-section2-card {
+  position: absolute;
+  width: 200px;
+  height: 280px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border-radius: var(--radius-xl);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.15),
+    0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ppa-section2-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  overflow: visible;
+  border: 3px solid #FFFFFF;
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(35, 54, 109, 0.1);
+  transition: all var(--transition-normal);
+}
+
+.ppa-section2-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  transition: transform var(--transition-normal);
+}
+
+.ppa-section2-card:hover .ppa-section2-card-img {
+  transform: scale(1.01);
+}
+
+/* Diagonal Staircase Positioning - Title level se start */
+.ppa-section2-card-1 {
+  top: 80px;
+  left: 0;
+  z-index: 1;
+}
+
+.ppa-section2-card-2 {
+  top: 120px;
+  left: 140px;
+  z-index: 2;
+}
+
+.ppa-section2-card-3 {
+  top: 160px;
+  left: 280px;
+  z-index: 3;
+}
+
+.ppa-section2-card-4 {
+  top: 200px;
+  left: 420px;
+  z-index: 4;
+}
+
+.ppa-section2-card-5 {
+  top: 240px;
+  left: 560px;
+  z-index: 5;
+}
+.ppa-section2-card-6 {
+  top: 240px;
+  left: 650px;
+  z-index: 5;
+}
+/* Tooltip - Card ke UPAR show hoga */
+.ppa-section2-tooltip {
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: #1D1D1D;
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-normal);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+}
+
+/* Arrow neeche point karega (card ki taraf) */
+.ppa-section2-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #1D1D1D;
+}
+
+
+/* Hover Effects */
+.ppa-section2-card:hover {
+  z-index: 10;
+  transform: translateY(-25px);
+}
+
+.ppa-section2-card:hover .ppa-section2-card-inner {
+  border-color: var(--color-accent-blue);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    0 10px 20px rgba(51, 124, 199, 0.2),
+    inset 0 0 0 2px var(--color-accent-blue);
+}
+
+.ppa-section2-card:hover .ppa-section2-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  top: -60px;
+}
+
+.ppa-section2-card:hover .ppa-section2-arrow-line {
+  transform: translateY(-50%) scaleX(1);
+}
+
+/* ============ RESPONSIVE ============ */
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .ppa-section2-wrapper {
+    gap: 80px;
+  }
+  
+  .ppa-section2-collage {
+    min-height: 600px;
+    padding-top: 100px;
+  }
+  
+  .ppa-section2-card {
+    width: 220px;
+    height: 300px;
+  }
+  
+  .ppa-section2-card-1 { top: 100px; left: 0; }
+  .ppa-section2-card-2 { top: 140px; left: 160px; }
+  .ppa-section2-card-3 { top: 180px; left: 320px; }
+  .ppa-section2-card-4 { top: 220px; left: 480px; }
+  .ppa-section2-card-5 { top: 260px; left: 640px; }
+  .ppa-section2-card-6 { top: 310px; left: 780px; }
+}
+
+/* Desktop (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .ppa-section2-wrapper {
+    gap: 40px;
+  }
+  
+  .ppa-section2-collage {
+    min-height: 500px;
+    padding-top: 80px;
+  }
+  
+  .ppa-section2-card {
+    width: 180px;
+    height: 250px;
+  }
+  
+  .ppa-section2-card-1 { top: 80px; left: 0; }
+  .ppa-section2-card-2 { top: 110px; left: 130px; }
+  .ppa-section2-card-3 { top: 140px; left: 260px; }
+  .ppa-section2-card-4 { top: 170px; left: 390px; }
+  .ppa-section2-card-5 { top: 200px; left: 520px; }
+  .ppa-section2-card-6 { top: 240px; left: 640px; }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ppa-section2-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .ppa-section2-collage {
+    min-height: 450px;
+    padding-top: 60px;
+    padding-left: 10px;
+  }
+  
+  .ppa-section2-card {
+    width: 160px;
+    height: 220px;
+  }
+  
+  .ppa-section2-card-1 { top: 60px; left: 0; }
+  .ppa-section2-card-2 { top: 90px; left: 120px; }
+  .ppa-section2-card-3 { top: 120px; left: 240px; }
+  .ppa-section2-card-4 { top: 150px; left: 360px; }
+  .ppa-section2-card-5 { top: 180px; left: 480px; }
+  .ppa-section2-card-6 { top: 210px; left: 600px; }
+}
+
+/* Mobile Large (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .ppa-section2 {
+    padding: 50px 0;
+  }
+  
+  .ppa-section2-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .ppa-section2-content {
+    padding-top: 0;
+  }
+  
+  .ppa-section2-title {
+    font-size: var(--font-size-4xl);
+    text-align: center;
+  }
+  
+  .ppa-section2-eyebrow-wrapper {
+    justify-content: center;
+  }
+  
+  .ppa-section2-body {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .ppa-section2-cta {
+    text-align: center;
+  }
+  
+  .ppa-section2-collage {
+    min-height: 400px;
+    padding-top: 40px;
+    padding-left: 0;
+  }
+  
+  .ppa-section2-card {
+    width: 130px;
+    height: 180px;
+  }
+  
+  .ppa-section2-card-1 { top: 40px; left: 0; }
+  .ppa-section2-card-2 { top: 60px; left: 90px; }
+  .ppa-section2-card-3 { top: 80px; left: 180px; }
+  .ppa-section2-card-4 { top: 100px; left: 270px; }
+  .ppa-section2-card-5 { top: 120px; left: 360px; }
+  .ppa-section2-card-6 { top: 140px; left: 460px; }
+  .ppa-section2-tooltip {
+    font-size: 9px;
+    padding: 8px 12px;
+    top: -45px;
+  }
+}
+
+/* Mobile Small (300px - 479px) */
+@media (max-width: 479px) {
+  .ppa-section2 {
+    padding: 40px 0;
+  }
+  
+  .ppa-section2-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .ppa-section2-content {
+    padding-top: 0;
+  }
+  
+  .ppa-section2-title {
+    font-size: var(--font-size-3xl);
+    text-align: center;
+  }
+  
+  .ppa-section2-eyebrow-wrapper {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .ppa-section2-eyebrow-line {
+    width: 30px;
+  }
+  
+  .ppa-section2-eyebrow {
+    font-size: var(--font-size-xs);
+  }
+  
+  .ppa-section2-body {
+    font-size: var(--font-size-xs);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .ppa-section2-cta {
+    text-align: center;
+  }
+  
+  .ppa-section2-btn {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: var(--font-size-xs);
+  }
+  
+  .ppa-section2-collage {
+    min-height: 350px;
+    padding-top: 30px;
+    padding-left: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  
+  .ppa-section2-card {
+    width: 110px;
+    height: 150px;
+    border-radius: var(--radius-lg);
+  }
+  
+  .ppa-section2-card-img {
+    border-radius: var(--radius-lg);
+  }
+  
+  .ppa-section2-card-inner {
+    border-radius: var(--radius-lg);
+    border-width: 2px;
+  }
+  
+  .ppa-section2-card-1 { top: 30px; left: 0; }
+  .ppa-section2-card-2 { top: 50px; left: 80px; }
+  .ppa-section2-card-3 { top: 70px; left: 160px; }
+  .ppa-section2-card-4 { top: 90px; left: 240px; }
+  .ppa-section2-card-5 { top: 200px; left: 90px; }
+  .ppa-section2-card-6 { top: 180px; left: 20px; }
+  
+  .ppa-section2-tooltip {
+    font-size: 8px;
+    padding: 6px 10px;
+    top: -40px;
+    white-space: nowrap;
+  }
+  
+  .ppa-section2-arrow-line {
+    width: 25px;
+    right: -25px;
+  }
+}
+
+/* Ultra Small (300px - 350px) */
+@media (max-width: 350px) {
+  .ppa-section2-collage {
+    min-height: 320px;
+    padding-top: 25px;
+  }
+  
+  .ppa-section2-card {
+    width: 95px;
+    height: 130px;
+  }
+  
+  .ppa-section2-card-1 { top: 25px; left: 0; }
+  .ppa-section2-card-2 { top: 42px; left: 68px; }
+  .ppa-section2-card-3 { top: 59px; left: 136px; }
+  .ppa-section2-card-4 { top: 76px; left: 204px; }
+  .ppa-section2-card-5 { top: 93px; left: 272px; }
+  
+  .ppa-section2-tooltip {
+    font-size: 7px;
+    padding: 5px 8px;
+    top: -35px;
+  }
+}
