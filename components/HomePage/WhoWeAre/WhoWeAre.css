@@ -44,8 +44,8 @@
 }
 
 .ppa-whoweare-eyebrow {
-  font-family: var(--font-family-body);
   font-size: var(--font-size-sm);
+  font-family: var(--font-family-body);
   font-weight: var(--font-weight-semibold);
   color: var(--color-accent-magenta);
   text-transform: uppercase;
@@ -53,7 +53,7 @@
 }
 
 .ppa-whoweare-title {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   color: #1D1D1D;
   line-height: 1.15;
@@ -536,7 +536,9 @@
   .ppa-whoweare-wrapper {
     gap: 80px;
   }
-  
+  .ppa-whoweare-title {
+  font-size: var(--font-size-4xl);
+  }
   .ppa-whoweare-logos {
     height: 350px;
   }
@@ -549,6 +551,9 @@
 @media (min-width: 1024px) and (max-width: 1439px) {
   .ppa-whoweare-wrapper {
     gap: 50px;
+  }
+   .ppa-whoweare-title {
+  font-size: var(--font-size-4xl);
   }
 }
 
@@ -570,6 +575,9 @@
     max-width: 400px;
     margin: 0 auto;
   }
+   .ppa-whoweare-title {
+  font-size: var(--font-size-3xl);
+  }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -583,7 +591,7 @@
   }
   
   .ppa-whoweare-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-2xl);
     text-align: center;
   }
   
@@ -615,14 +623,16 @@
   .ppa-whoweare {
     padding: 40px 0;
   }
-  
+  .ppa-whoweare-eyebrow {
+  font-size: var(--font-size-xs);
+  }
   .ppa-whoweare-wrapper {
     grid-template-columns: 1fr;
     gap: 30px;
   }
   
   .ppa-whoweare-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-xl);
     text-align: center;
   }
   
@@ -671,7 +681,9 @@
   .ppa-whoweare-logos {
     height: 200px;
   }
-  
+   .ppa-whoweare-title {
+  font-size: var(--font-size-lg);
+  }
   .ppa-whoweare-ball {
     width: 45px;
     height: 45px;

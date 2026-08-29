@@ -37,8 +37,22 @@ function bezierYAtX(p0, c, p1, targetX) {
   return (1 - t) ** 2 * p0.y + 2 * (1 - t) * t * c.y + t ** 2 * p1.y
 }
 
+// function getPinPercent(xFraction) {
+//   const targetX = WIRE.width * xFraction
+//   const y =
+//     targetX <= WIRE.p1.x
+//       ? bezierYAtX(WIRE.p0, WIRE.c1, WIRE.p1, targetX)
+//       : bezierYAtX(WIRE.p1, WIRE.c2, WIRE.p2, targetX)
+//   return {
+//     left: (targetX / WIRE.width) * 100,
+//     top: (y / WIRE.height) * 100,
+//   }
+// }
+
 function getPinPercent(xFraction) {
-  const targetX = WIRE.width * xFraction
+  // Cards ko paas lane ke liye xFraction adjust karo
+  const adjustedXFraction = xFraction * 0.85 + 0.075; // Cards center mein tight honge
+  const targetX = WIRE.width * adjustedXFraction
   const y =
     targetX <= WIRE.p1.x
       ? bezierYAtX(WIRE.p0, WIRE.c1, WIRE.p1, targetX)
@@ -225,24 +239,33 @@ const WhatWeDo = () => {
               preserveAspectRatio="none"
             >
               <defs>
-                <linearGradient id="wireGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                {/* <linearGradient id="wireGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#337CC7" stopOpacity="0.5" />
                   <stop offset="20%" stopColor="#586692" stopOpacity="0.7" />
                   <stop offset="50%" stopColor="#969FBB" stopOpacity="0.9" />
                   <stop offset="80%" stopColor="#586692" stopOpacity="0.7" />
                   <stop offset="100%" stopColor="#337CC7" stopOpacity="0.5" />
-                </linearGradient>
-                <linearGradient id="wireHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                </linearGradient> */}
+                <linearGradient id="wireGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%" stopColor="#abaeb5" stopOpacity="0.8" />
+  <stop offset="100%" stopColor="#abaeb5" stopOpacity="0.8" />
+</linearGradient>
+
+                {/* <linearGradient id="wireHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.6" />
                   <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
-                </linearGradient>
+                </linearGradient> */}
+                <linearGradient id="wireHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.4" />
+  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.1" />
+</linearGradient>
               </defs>
 
               <path
                 d={WIRE_PATH}
                 fill="none"
                 stroke="url(#wireGradient)"
-                strokeWidth="5"
+                strokeWidth="2.5"
                 strokeLinecap="round"
                 className="ppa-whatwedo-wire-path"
               />
@@ -250,7 +273,7 @@ const WhatWeDo = () => {
                 d={WIRE_PATH_HIGHLIGHT}
                 fill="none"
                 stroke="url(#wireHighlight)"
-                strokeWidth="2"
+                strokeWidth="1"
                 strokeLinecap="round"
                 opacity="0.6"
               />

@@ -50,8 +50,8 @@
 }
 
 .ppa-whyppa-eyebrow {
-  font-family: var(--font-family-body);
   font-size: var(--font-size-sm);
+  font-family: var(--font-family-body);
   font-weight: var(--font-weight-semibold);
   color: var(--color-accent-magenta);
   text-transform: uppercase;
@@ -59,7 +59,7 @@
 }
 
 .ppa-whyppa-title {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   color: #1D1D1D;
   line-height: 1.15;
@@ -311,6 +311,9 @@
   .ppa-whyppa-card-medium {
     height: 244px;
   }
+  .ppa-whyppa-title {
+  font-size: var(--font-size-4xl);
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
@@ -329,6 +332,9 @@
   .ppa-whyppa-card-medium {
     height: 189px;
   }
+   .ppa-whyppa-title {
+  font-size: var(--font-size-4xl);
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -342,7 +348,7 @@
   }
   
   .ppa-whyppa-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
   }
   
   .ppa-whyppa-card-tall {
@@ -363,9 +369,11 @@
   .ppa-whyppa-header {
     margin-bottom: 40px;
   }
-  
+  .ppa-whyppa-eyebrow {
+  font-size: var(--font-size-xs);
+  }
   .ppa-whyppa-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
   }
   
   .ppa-whyppa-content {
@@ -395,7 +403,7 @@
   }
   
   .ppa-whyppa-title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
   }
   
   .ppa-whyppa-eyebrow-wrapper {

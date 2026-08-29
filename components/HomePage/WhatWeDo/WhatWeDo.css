@@ -60,7 +60,7 @@
 }
 
 .ppa-whatwedo-title {
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   color: #1D1D1D;
   line-height: 1.15;
@@ -160,16 +160,25 @@
   filter: blur(20px);
 }
 
+/* .ppa-whatwedo-wire-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; 
+  z-index: 1;
+  filter: drop-shadow(0 4px 8px rgba(35, 54, 109, 0.15));
+} */
+
 .ppa-whatwedo-wire-svg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120px; /* Fixed height - matches viewBox aspect */
+  height: 120px;
   z-index: 1;
-  filter: drop-shadow(0 4px 8px rgba(35, 54, 109, 0.15));
+  filter: drop-shadow(0 2px 4px rgba(35, 54, 109, 0.1));
 }
-
 .ppa-whatwedo-wire-path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
@@ -366,11 +375,17 @@
   .ppa-whatwedo-card-image-wrapper {
     height: 200px;
   }
+  .ppa-whatwedo-title {
+  font-size: var(--font-size-4xl);
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   .ppa-whatwedo-pin {
     width: 280px;
+  }
+  .ppa-whatwedo-title {
+  font-size: var(--font-size-4xl);
   }
 }
 
@@ -385,7 +400,7 @@
   }
 
   .ppa-whatwedo-title {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-3xl);
   }
 
   .ppa-whatwedo-wire-stage {
@@ -420,7 +435,7 @@
   }
 
   .ppa-whatwedo-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-2xl);
   }
 
   .ppa-whatwedo-eyebrow-wrapper {
@@ -459,7 +474,7 @@
   }
 
   .ppa-whatwedo-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-xl);
   }
 
   .ppa-whatwedo-eyebrow-wrapper {
@@ -541,7 +556,9 @@
   .ppa-whatwedo-card-content {
     padding: 16px 12px 12px;
   }
-
+.ppa-whatwedo-title {
+  font-size: var(--font-size-lg);
+  }
   .ppa-whatwedo-clip {
     width: 45px;
     height: 35px;

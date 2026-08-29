@@ -242,7 +242,7 @@
 }
 
 .ppa-hero-secondary-btn {
-  padding: 14px 32px;
+  /* padding: 14px 32px; */
   font-size: var(--font-size-sm);
   letter-spacing: 1.5px;
   border-radius: var(--radius-full);

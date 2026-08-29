@@ -79,7 +79,7 @@
 }
 
 .ppa-section2-title {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   color: #1D1D1D;
   line-height: 1.15;
@@ -306,6 +306,9 @@
 /* ============ RESPONSIVE ============ */
 /* Large Desktop (1440px+) */
 @media (min-width: 1440px) {
+  .ppa-section2-title {
+  font-size: var(--font-size-4xl);
+  }
   .ppa-section2-wrapper {
     gap: 80px;
   }
@@ -330,6 +333,9 @@
 
 /* Desktop (1024px - 1439px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
+  .ppa-section2-title {
+  font-size: var(--font-size-4xl);
+  }
   .ppa-section2-wrapper {
     gap: 40px;
   }
@@ -354,6 +360,9 @@
 
 /* Tablet (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .ppa-section2-title {
+  font-size: var(--font-size-3xl);
+  }
   .ppa-section2-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -383,7 +392,6 @@
   .ppa-section2 {
     padding: 50px 0;
   }
-  
   .ppa-section2-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -394,7 +402,7 @@
   }
   
   .ppa-section2-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-2xl);
     text-align: center;
   }
   
@@ -441,7 +449,7 @@
   .ppa-section2 {
     padding: 40px 0;
   }
-  
+
   .ppa-section2-wrapper {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -452,7 +460,7 @@
   }
   
   .ppa-section2-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-xl);
     text-align: center;
   }
   
@@ -536,7 +544,10 @@
     min-height: 320px;
     padding-top: 25px;
   }
-  
+  .ppa-section2-title {
+    font-size: var(--font-size-lg);
+    text-align: center;
+  }
   .ppa-section2-card {
     width: 95px;
     height: 130px;

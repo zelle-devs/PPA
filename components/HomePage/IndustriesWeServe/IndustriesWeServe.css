@@ -71,7 +71,7 @@
 }
 
 .ppa-industries-title {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   color: #1D1D1D;
   line-height: 1.15;
@@ -365,6 +365,9 @@
   .ppa-industries-col-3 .ppa-industries-card-small {
     height: 90px;
   }
+  .ppa-industries-title {
+  font-size: var(--font-size-4xl);
+  }
 }
 
 /* Desktop (1024px - 1439px) */
@@ -403,6 +406,9 @@
   .ppa-industries-col-3 .ppa-industries-card-small {
     height: 170px;
   }
+  .ppa-industries-title {
+  font-size: var(--font-size-4xl);
+  }
 }
 
 /* Tablet (768px - 1023px) */
@@ -416,7 +422,7 @@
   }
   
   .ppa-industries-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
   }
   
   .ppa-industries-masonry {
@@ -467,7 +473,7 @@
   }
   
   .ppa-industries-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-2xl);
   }
   
   .ppa-industries-body {
@@ -510,7 +516,7 @@
   }
   
   .ppa-industries-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-xl);
   }
   
   .ppa-industries-eyebrow-wrapper {
@@ -588,5 +594,8 @@
   .ppa-industries-col-3 .ppa-industries-card-large,
   .ppa-industries-col-3 .ppa-industries-card-small {
     height: 120px;
+  }
+  .ppa-industries-title {
+    font-size: var(--font-size-lg);
   }
 }

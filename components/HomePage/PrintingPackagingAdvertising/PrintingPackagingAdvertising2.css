@@ -268,7 +268,7 @@
   }
   
   .ppa-ppa2-title {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-4xl);
   }
 }
 
@@ -280,6 +280,9 @@
   
   .ppa-ppa2-image-wrapper {
     min-height: 300px;
+  }
+   .ppa-ppa2-title {
+    font-size: var(--font-size-4xl);
   }
 }
 

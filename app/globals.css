@@ -177,23 +177,23 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-neutral-dark);
+  background: var(--color-text-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-navy-medium);
+  background: var(--color-accent-magenta);
   border-radius: var(--radius-full);
-  border: 2px solid var(--color-neutral-dark);
+  border: 2px solid var(--color-text-primary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-blue);
+  background: var(--color-accent-magenta);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-navy-medium) var(--color-neutral-dark);
+  scrollbar-color: var(--color-accent-magenta) var(--color-text-primary);
 }
 
 img,

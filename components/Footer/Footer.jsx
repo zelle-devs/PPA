@@ -1,26 +1,33 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronRight, ChevronDown, Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react';
+import { ChevronRight, ChevronDown, Mail, MapPin, Phone } from 'lucide-react';
 import './Footer.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsFacebook, BsInstagram, BsLinkedin, BsYoutube } from 'react-icons/bs';
 
-const DEFAULT_COMPANIES = [
-  { name: 'About PPA', href: '/company-one' },
-  { name: 'Portfolio', href: '/company-two' },
-  { name: 'Industries', href: '/company-three' },
-  { name: 'Careers', href: '/company-four' },
+const DEFAULT_COMPANY = [
+  { name: 'About PPA', href: '/about' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Industries', href: '/industries' },
+  { name: 'Careers', href: '/careers' },
 ];
 
-const DEFAULT_LINKS = [
-  { name: 'About', href: '/about' },
+const DEFAULT_SERVICES = [
+  { name: 'Printing', href: '/services/printing' },
+  { name: 'UV Printing & Personalization', href: '/services/uv-printing' },
+  { name: 'Packaging', href: '/services/packaging' },
+  { name: 'Advertising & Branding', href: '/services/advertising' },
+  { name: 'Signage & Installation', href: '/services/signage' },
   { name: 'Capabilities', href: '/capabilities' },
-  { name: 'Industries', href: '/industries' },
-  { name: 'Approach', href: '/approach' },
-  { name: 'Leadership', href: '/leadership' },
-  { name: 'Careers', href: '/careers' },
+];
+
+const DEFAULT_EXPLORE = [
+  { name: 'Process', href: '/process' },
+  { name: 'Resources', href: '/resources' },
+  { name: 'FAQs', href: '/faqs' },
+  { name: 'Request a Quote', href: '/contact' },
 ];
 
 const DEFAULT_SOCIALS = [
@@ -31,9 +38,10 @@ const DEFAULT_SOCIALS = [
 ];
 
 export default function Footer({
-  description = 'Print It. Pack It. Get It Seen.',
-  companies = DEFAULT_COMPANIES,
-  links = DEFAULT_LINKS,
+  tagline = 'Print It. Pack It. Get It Seen.',
+  company = DEFAULT_COMPANY,
+  services = DEFAULT_SERVICES,
+  explore = DEFAULT_EXPLORE,
   phone = '+92 21 111 254 111',
   email = 'hello@ppa.com',
   address = 'PPA House, Main Boulevard, Karachi 74900, Pakistan',
@@ -52,7 +60,6 @@ export default function Footer({
 
   return (
     <footer className="ppa-footer">
-      {/* Top Border Line */}
       <div className="ppa-footer-top-border"></div>
 
       <div className="container2">
@@ -63,84 +70,103 @@ export default function Footer({
               <Image
                 src="/logo2.png"
                 alt="PPA Logo"
-                width={150}
-                height={50}
+                width={130}
+                height={40}
                 className="ppa-footer-logo-image"
                 unoptimized={true}
               />
             </Link>
-            <p className="ppa-footer-desc">{description}</p>
+            <p className="ppa-footer-tagline">{tagline}</p>
             
-            {/* Socials */}
             <div className="ppa-footer-socials">
               {socials.map(({ icon: Icon, href, label }) => (
                 <a key={label} href={href} aria-label={label} className="ppa-footer-social-btn" target="_blank" rel="noopener noreferrer">
-                  <Icon size={15} />
+                  <Icon size={14} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Our Companies */}
+          {/* Company */}
           <div className="ppa-footer-col">
-            <div className="ppa-footer-heading-wrapper" onClick={() => toggleSection('companies')}>
-              <span className="ppa-footer-heading">Our Companies</span>
+            <div className="ppa-footer-heading-wrapper" onClick={() => toggleSection('company')}>
+              <span className="ppa-footer-heading">Company</span>
               <button className="ppa-footer-toggle">
-                <ChevronDown size={16} className={`ppa-toggle-icon ${openSection === 'companies' ? 'open' : ''}`} />
+                <ChevronDown size={14} className={`ppa-toggle-icon ${openSection === 'company' ? 'open' : ''}`} />
               </button>
             </div>
-            <ul className={`ppa-footer-list ${openSection === 'companies' ? 'open' : ''}`}>
-              {companies.map((c) => (
-                <li key={c.name || c}>
-                  <Link href={c.href || '/companies'}>
-                    <ChevronRight size={12} />
-                    <span>{c.name || c}</span>
+            <ul className={`ppa-footer-list ${openSection === 'company' ? 'open' : ''}`}>
+              {company.map((c) => (
+                <li key={c.name}>
+                  <Link href={c.href}>
+                    <ChevronRight size={11} />
+                    <span>{c.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Services */}
           <div className="ppa-footer-col">
-            <div className="ppa-footer-heading-wrapper" onClick={() => toggleSection('links')}>
-              <span className="ppa-footer-heading">Quick Links</span>
+            <div className="ppa-footer-heading-wrapper" onClick={() => toggleSection('services')}>
+              <span className="ppa-footer-heading">Services</span>
               <button className="ppa-footer-toggle">
-                <ChevronDown size={16} className={`ppa-toggle-icon ${openSection === 'links' ? 'open' : ''}`} />
+                <ChevronDown size={14} className={`ppa-toggle-icon ${openSection === 'services' ? 'open' : ''}`} />
               </button>
             </div>
-            <ul className={`ppa-footer-list ${openSection === 'links' ? 'open' : ''}`}>
-              {links.map((l) => (
-                <li key={l.name || l}>
-                  <Link href={l.href || '/'}>
-                    <ChevronRight size={12} />
-                    <span>{l.name || l}</span>
+            <ul className={`ppa-footer-list ${openSection === 'services' ? 'open' : ''}`}>
+              {services.map((s) => (
+                <li key={s.name}>
+                  <Link href={s.href}>
+                    <ChevronRight size={11} />
+                    <span>{s.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Get In Touch */}
+          {/* Explore */}
+          <div className="ppa-footer-col">
+            <div className="ppa-footer-heading-wrapper" onClick={() => toggleSection('explore')}>
+              <span className="ppa-footer-heading">Explore</span>
+              <button className="ppa-footer-toggle">
+                <ChevronDown size={14} className={`ppa-toggle-icon ${openSection === 'explore' ? 'open' : ''}`} />
+              </button>
+            </div>
+            <ul className={`ppa-footer-list ${openSection === 'explore' ? 'open' : ''}`}>
+              {explore.map((e) => (
+                <li key={e.name}>
+                  <Link href={e.href}>
+                    <ChevronRight size={11} />
+                    <span>{e.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
           <div className="ppa-footer-col ppa-footer-contact">
             <div className="ppa-footer-heading-wrapper" onClick={() => toggleSection('contact')}>
-              <span className="ppa-footer-heading">Get In Touch</span>
+              <span className="ppa-footer-heading">Contact</span>
               <button className="ppa-footer-toggle">
-                <ChevronDown size={16} className={`ppa-toggle-icon ${openSection === 'contact' ? 'open' : ''}`} />
+                <ChevronDown size={14} className={`ppa-toggle-icon ${openSection === 'contact' ? 'open' : ''}`} />
               </button>
             </div>
             <ul className={`ppa-footer-contact-list ${openSection === 'contact' ? 'open' : ''}`}>
               <li>
-                <Phone size={14} />
+                <MapPin size={13} />
+                <span>{address}</span>
+              </li>
+              <li>
+                <Phone size={13} />
                 <a href={`tel:${phone.replace(/\s+/g, '')}`}>{phone}</a>
               </li>
               <li>
-                <Mail size={14} />
+                <Mail size={13} />
                 <a href={`mailto:${email}`}>{email}</a>
-              </li>
-              <li>
-                <MapPin size={14} />
-                <span>{address}</span>
               </li>
             </ul>
           </div>
@@ -149,13 +175,8 @@ export default function Footer({
         {/* Bottom Bar */}
         <div className="ppa-footer-bottom">
           <p className="ppa-footer-copyright">
-            © {year} PPA. All rights reserved.
+            © {year} Print, Pack & Advertising (PPA). All rights reserved.
           </p>
-          <div className="ppa-footer-bottom-links">
-            <Link href="/privacy">Privacy Policy</Link>
-            <span className="ppa-footer-dot">•</span>
-            <Link href="/terms">Terms</Link>
-          </div>
         </div>
       </div>
     </footer>
