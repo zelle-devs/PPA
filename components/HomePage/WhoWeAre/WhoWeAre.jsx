@@ -55,18 +55,29 @@ const WhoWeAre = () => {
     const stage = stageRef.current
     if (!stage || !isVisible) return
 
-    const getBallSize = () => 100 // Fixed ball size
+const getBallSize = () => {
+  if (window.innerWidth <= 350) return 40
+  if (window.innerWidth <= 479) return 50
+  if (window.innerWidth <= 767) return 70
+  return 100
+}
+   const initBalls = () => {
+  const rect = stage.getBoundingClientRect()
+  const size = getBallSize()
 
-    const initBalls = () => {
-      const rect = stage.getBoundingClientRect()
-      const size = getBallSize()
-      physicsRef.current = companyLogos.map((_, i) => ({
-        x: size/2 + Math.random() * Math.max(rect.width - size, 1),
-        y: -(size + i * 50 + Math.random() * 50),
-        vx: (Math.random() - 0.5) * 1.5,
-        vy: 0,
-      }))
-    }
+  const isMobile = window.innerWidth <= 767
+
+  physicsRef.current = companyLogos.map((_, i) => ({
+    x: size / 2 + Math.random() * Math.max(rect.width - size, 1),
+
+    y: isMobile
+      ? rect.height + size + i * 25
+      : -(size + i * 50 + Math.random() * 50),
+
+    vx: (Math.random() - 0.5) * 1.5,
+    vy: 0,
+  }))
+}
 
     initBalls()
 

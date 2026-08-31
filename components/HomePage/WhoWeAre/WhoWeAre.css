@@ -1,4 +1,7 @@
-/* ============ PPA WHO WE ARE SECTION ============ */
+/* =========================================================
+   PPA WHO WE ARE SECTION
+========================================================= */
+
 .ppa-whoweare {
   position: relative;
   padding: 80px 0;
@@ -14,7 +17,10 @@
   z-index: 1;
 }
 
-/* ============ LEFT SECTION ============ */
+/* =========================================================
+   LEFT SECTION
+========================================================= */
+
 .ppa-whoweare-left {
   display: flex;
   flex-direction: column;
@@ -31,7 +37,7 @@
 .ppa-whoweare-eyebrow-line {
   width: 40px;
   height: 3px;
- background: linear-gradient(
+  background: linear-gradient(
     90deg,
     var(--color-accent-blue) 0%,
     var(--color-accent-blue) 33.33%,
@@ -40,7 +46,7 @@
     var(--color-accent-yellow) 66.66%,
     var(--color-accent-yellow) 100%
   );
-    border-radius: var(--radius-full);
+  border-radius: var(--radius-full);
 }
 
 .ppa-whoweare-eyebrow {
@@ -63,7 +69,11 @@
 }
 
 .ppa-whoweare-title-accent {
-  background: linear-gradient(135deg, var(--color-accent-blue) 0%, var(--color-accent-magenta) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-blue) 0%,
+    var(--color-accent-magenta) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -79,19 +89,26 @@
   max-width: 520px;
 }
 
-/* Premium 3D Button */
+/* =========================================================
+   BUTTON
+========================================================= */
+
 .ppa-whoweare-btn {
   padding: 14px 32px;
   font-size: var(--font-size-sm);
   letter-spacing: 1.5px;
   border-radius: var(--radius-full);
   font-weight: var(--font-weight-semibold);
-  background: linear-gradient(135deg, var(--color-accent-blue) 0%, #2a68a8 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-blue) 0%,
+    #2a68a8 100%
+  );
   color: #FFFFFF;
   border: none;
   position: relative;
   transition: all var(--transition-normal);
-  box-shadow: 
+  box-shadow:
     0 4px 15px rgba(51, 124, 199, 0.3),
     0 8px 30px rgba(51, 124, 199, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
@@ -108,35 +125,50 @@
   left: 0;
   right: 0;
   height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 100%
+  );
   border-radius: var(--radius-full) var(--radius-full) 50% 50%;
   pointer-events: none;
 }
 
 .ppa-whoweare-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(51, 124, 199, 0.4),
     0 15px 45px rgba(51, 124, 199, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
     inset 0 -3px 0 rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #2a68a8 0%, var(--color-accent-blue) 100%);
+  background: linear-gradient(
+    135deg,
+    #2a68a8 0%,
+    var(--color-accent-blue) 100%
+  );
   color: #FFFFFF;
 }
 
-/* ============ BALL PIT ============ */
+/* =========================================================
+   BALL PIT
+========================================================= */
+
 .ppa-whoweare-logos {
   position: relative;
+  width: 100%;
   height: 300px;
   background: rgba(255, 255, 255, 0.5);
   border-radius: var(--radius-2xl);
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   overflow: hidden;
   touch-action: none;
   cursor: default;
+  flex-shrink: 0;
 }
+
+/* Ball */
 
 .ppa-whoweare-ball {
   position: absolute;
@@ -148,6 +180,7 @@
   will-change: transform;
   border: 2px solid;
   border-radius: 50%;
+  box-sizing: border-box;
 }
 
 .ppa-whoweare-ball-inner {
@@ -157,16 +190,18 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.15),
     inset 0 2px 4px rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .ppa-whoweare-ball-inner:hover {
   transform: scale(1.1);
-  box-shadow: 
+  box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.25),
     inset 0 2px 4px rgba(255, 255, 255, 0.9);
 }
@@ -181,7 +216,10 @@
   border-radius: 50%;
 }
 
-/* ============ RIGHT SECTION - DESKTOP FOLDER ============ */
+/* =========================================================
+   RIGHT SECTION - FOLDER
+========================================================= */
+
 .ppa-whoweare-right {
   display: flex;
   align-items: center;
@@ -196,7 +234,6 @@
   perspective: 1000px;
 }
 
-/* ============ FOLDER ICON SHAPE ============ */
 .ppa-folder-icon {
   position: relative;
   width: 100%;
@@ -211,29 +248,39 @@
   transform: translateY(-8px);
 }
 
-/* Folder Back Tab */
+/* =========================================================
+   FOLDER BACK
+========================================================= */
+
 .ppa-folder-back {
   position: absolute;
   top: 0;
   left: 0;
-  width:100%;
+  width: 100%;
   height: 55px;
-  background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-accent-blue) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-navy-dark) 0%,
+    var(--color-accent-blue) 100%
+  );
   border-radius: var(--radius-md) var(--radius-md) 0 0;
   z-index: 1;
-  box-shadow: 
+  box-shadow:
     0 -4px 15px rgba(51, 124, 199, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* Folder Tab (small tab on top) */
 .ppa-folder-tab-top {
   position: absolute;
   top: -35px;
   left: 0;
   width: 150px;
   height: 40px;
-  background: linear-gradient(135deg, var(--color-accent-blue) 0%, var(--color-navy-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-blue) 0%,
+    var(--color-navy-dark) 100%
+  );
   border-radius: var(--radius-md) var(--radius-md) 0 0;
   z-index: -4;
   display: flex;
@@ -246,7 +293,7 @@
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 
+  box-shadow:
     0 -4px 15px rgba(51, 124, 199, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
@@ -255,16 +302,27 @@
   flex-shrink: 0;
 }
 
-/* Folder Body - Main Shape */
+/* =========================================================
+   FOLDER BODY
+========================================================= */
+
 .ppa-folder-body {
   position: absolute;
   top: 30px;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, #F0F4FA 0%, #DCE5F0 100%);
-  border-radius: 0 var(--radius-xl) var(--radius-xl) var(--radius-xl);
-  box-shadow: 
+  background: linear-gradient(
+    180deg,
+    #F0F4FA 0%,
+    #DCE5F0 100%
+  );
+  border-radius:
+    0
+    var(--radius-xl)
+    var(--radius-xl)
+    var(--radius-xl);
+  box-shadow:
     0 20px 50px rgba(35, 54, 109, 0.15),
     0 10px 30px rgba(35, 54, 109, 0.1),
     inset 0 2px 0 rgba(255, 255, 255, 0.8),
@@ -276,17 +334,20 @@
   flex-direction: column;
 }
 
-/* Folder Front Flap */
 .ppa-folder-flap {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 45%;
-  background: linear-gradient(180deg, #E8EEF7 0%, #DCE5F0 100%);
+  background: linear-gradient(
+    180deg,
+    #E8EEF7 0%,
+    #DCE5F0 100%
+  );
   border-radius: 0 0 var(--radius-xl) var(--radius-xl);
   z-index: 3;
-  box-shadow: 
+  box-shadow:
     0 -5px 20px rgba(35, 54, 109, 0.08),
     inset 0 2px 0 rgba(255, 255, 255, 0.6);
   transform-origin: bottom;
@@ -297,7 +358,10 @@
   transform: rotateX(-8deg);
 }
 
-/* Files peeking out - Paper Stack Style */
+/* =========================================================
+   FILE STACK
+========================================================= */
+
 .ppa-folder-files-peek {
   position: relative;
   z-index: 2;
@@ -307,16 +371,12 @@
   overflow: visible;
   max-height: 100%;
   padding-bottom: 40%;
-}
-
-/* Hide scrollbar */
-.ppa-folder-files-peek::-webkit-scrollbar {
-  display: none;
-}
-
-.ppa-folder-files-peek {
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.ppa-folder-files-peek::-webkit-scrollbar {
+  display: none;
 }
 
 .ppa-folder-file-peek {
@@ -327,42 +387,65 @@
   gap: 10px;
   padding: 14px 16px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   border: 1px solid rgba(35, 54, 109, 0.08);
   min-height: 50px;
   position: relative;
   margin-bottom: -10px;
-  box-shadow: 
+  box-shadow:
     0 2px 4px rgba(35, 54, 109, 0.06),
     0 1px 2px rgba(35, 54, 109, 0.04);
 }
 
-/* Different paper colors for each file */
 .ppa-folder-file-peek:nth-child(1) {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F0F4FA 100%);
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #F0F4FA 100%
+  );
 }
 
 .ppa-folder-file-peek:nth-child(2) {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FDF0F4 100%);
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #FDF0F4 100%
+  );
 }
 
 .ppa-folder-file-peek:nth-child(3) {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FDF8EE 100%);
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #FDF8EE 100%
+  );
 }
 
 .ppa-folder-file-peek:nth-child(4) {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F0F7F4 100%);
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #F0F7F4 100%
+  );
 }
 
 .ppa-folder-file-peek:nth-child(5) {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F4F0FA 100%);
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #F4F0FA 100%
+  );
 }
 
 .ppa-folder-file-peek:nth-child(6) {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FAF0F0 100%);
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #FAF0F0 100%
+  );
 }
 
-/* Paper edge effect - bottom white line */
 .ppa-folder-file-peek::after {
   content: '';
   position: absolute;
@@ -373,21 +456,19 @@
   background: rgba(35, 54, 109, 0.06);
 }
 
-/* Hover - Paper lifts up */
 .ppa-folder-file-peek:hover {
   transform: translateY(-4px) translateX(4px);
   z-index: 5;
-  box-shadow: 
+  box-shadow:
     0 12px 25px rgba(35, 54, 109, 0.15),
     0 4px 10px rgba(35, 54, 109, 0.1);
 }
 
-/* Active - Paper fully lifted */
 .ppa-folder-file-peek.active {
   transform: translateY(-6px) translateX(6px);
   z-index: 10;
   border-color: var(--color-accent-blue);
-  box-shadow: 
+  box-shadow:
     0 15px 30px rgba(51, 124, 199, 0.25),
     0 6px 15px rgba(35, 54, 109, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -428,7 +509,8 @@
 
 .ppa-folder-file-peek-arrow {
   color: var(--color-navy-light);
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   flex-shrink: 0;
 }
 
@@ -437,28 +519,10 @@
   transform: rotate(90deg);
 }
 
-/* Folder Flap - Adjust for paper stack */
-.ppa-folder-flap {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(180deg, #E8EEF7 0%, #DCE5F0 100%);
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-  z-index: 3;
-  box-shadow: 
-    0 -5px 20px rgba(35, 54, 109, 0.08),
-    inset 0 2px 0 rgba(255, 255, 255, 0.6);
-  transform-origin: bottom;
-  transition: transform 0.5s ease;
-}
+/* =========================================================
+   ACTIVE FILE DISPLAY
+========================================================= */
 
-.ppa-folder-container:hover .ppa-folder-flap {
-  transform: rotateX(-8deg);
-}
-
-/* Active File Display - Adjust position */
 .ppa-folder-active-display {
   position: absolute;
   top: -30px;
@@ -467,7 +531,7 @@
   background: #FFFFFF;
   border-radius: var(--radius-xl);
   padding: 18px 20px;
-  box-shadow: 
+  box-shadow:
     0 20px 50px rgba(35, 54, 109, 0.2),
     0 10px 30px rgba(35, 54, 109, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -482,9 +546,11 @@
     opacity: 0;
     transform: scale(0.8) translateY(10px);
   }
+
   50% {
     transform: scale(1.05) translateY(-2px);
   }
+
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -531,161 +597,292 @@
   line-height: 1.4;
 }
 
-/* ============ RESPONSIVE ============ */
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
 @media (min-width: 1440px) {
+
   .ppa-whoweare-wrapper {
     gap: 80px;
   }
+
   .ppa-whoweare-title {
-  font-size: var(--font-size-4xl);
+    font-size: var(--font-size-4xl);
   }
+
   .ppa-whoweare-logos {
     height: 350px;
   }
-  
+
   .ppa-folder-container {
     max-width: 450px;
   }
 }
 
+/* =========================================================
+   DESKTOP
+========================================================= */
+
 @media (min-width: 1024px) and (max-width: 1439px) {
+
   .ppa-whoweare-wrapper {
     gap: 50px;
   }
-   .ppa-whoweare-title {
-  font-size: var(--font-size-4xl);
+
+  .ppa-whoweare-title {
+    font-size: var(--font-size-4xl);
   }
 }
 
+/* =========================================================
+   TABLET — 768px to 1023px
+   Order: Content → Folder → Ball
+   ========================================================= */
+
 @media (min-width: 768px) and (max-width: 1023px) {
+
   .ppa-whoweare {
     padding: 60px 0;
   }
-  
+
   .ppa-whoweare-wrapper {
-    grid-template-columns: 1fr;
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
   }
-  
+
+  /* Content first */
+  .ppa-whoweare-left {
+    display: contents;
+  }
+
+  .ppa-whoweare-content {
+    order: 1;
+  }
+
+  /* Folder second */
+  .ppa-whoweare-right {
+    order: 2;
+    width: 100%;
+  }
+
+  /* Ball third */
   .ppa-whoweare-logos {
+    order: 3;
+    width: 100%;
     height: 280px;
   }
-  
+
   .ppa-folder-container {
     max-width: 400px;
+    width: 100%;
     margin: 0 auto;
   }
-   .ppa-whoweare-title {
-  font-size: var(--font-size-3xl);
+
+  .ppa-whoweare-title {
+    font-size: var(--font-size-3xl);
   }
 }
 
+
+/* =========================================================
+   MOBILE LARGE — 480px to 767px
+   Order: Content → Folder → Ball
+   ========================================================= */
+
 @media (min-width: 480px) and (max-width: 767px) {
+
   .ppa-whoweare {
     padding: 50px 0;
   }
-  
+
   .ppa-whoweare-wrapper {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
   }
-  
+
+  /* Break left wrapper so content + ball
+     can participate in parent ordering */
+  .ppa-whoweare-left {
+    display: contents;
+  }
+
+  .ppa-whoweare-content {
+    order: 1;
+  }
+
+  .ppa-whoweare-right {
+    order: 2;
+    width: 100%;
+  }
+
+  .ppa-whoweare-logos {
+    order: 3;
+    width: 100%;
+    height: 250px;
+  }
+
+  .ppa-folder-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
   .ppa-whoweare-title {
     font-size: var(--font-size-2xl);
     text-align: center;
   }
-  
+
   .ppa-whoweare-eyebrow-wrapper {
     justify-content: center;
   }
-  
+
   .ppa-whoweare-body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .ppa-whoweare-cta {
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
-  
-  .ppa-whoweare-logos {
-    height: 250px;
-  }
-  
+
   .ppa-whoweare-ball {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
 }
 
+
+/* =========================================================
+   MOBILE — 300px to 479px
+   Order: Content → Folder → Ball
+   ========================================================= */
+
 @media (max-width: 479px) {
+
   .ppa-whoweare {
     padding: 40px 0;
   }
-  .ppa-whoweare-eyebrow {
-  font-size: var(--font-size-xs);
-  }
+
   .ppa-whoweare-wrapper {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
   }
-  
+
+  /* IMPORTANT:
+     Allows content + ball to become
+     separate flex items of wrapper */
+  .ppa-whoweare-left {
+    display: contents;
+  }
+
+  /* 1 — Content */
+  .ppa-whoweare-content {
+    order: 1;
+    width: 100%;
+  }
+
+  /* 2 — Folder */
+  .ppa-whoweare-right {
+    order: 2;
+    width: 100%;
+  }
+
+  /* 3 — Ball */
+  .ppa-whoweare-logos {
+    order: 3;
+    width: 100%;
+    height: 220px;
+  }
+
+  .ppa-whoweare-eyebrow {
+    font-size: var(--font-size-xs);
+  }
+
   .ppa-whoweare-title {
     font-size: var(--font-size-xl);
     text-align: center;
   }
-  
+
   .ppa-whoweare-eyebrow-wrapper {
     flex-direction: column;
+    justify-content: center;
     gap: 8px;
   }
-  
+
   .ppa-whoweare-body {
     font-size: var(--font-size-xs);
     text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
+  .ppa-whoweare-cta {
+    display: flex;
+    justify-content: center;
+  }
+
   .ppa-whoweare-btn {
     width: 100%;
     padding: 12px 18px;
     font-size: var(--font-size-xs);
   }
-  
+
+  /* Ball container */
   .ppa-whoweare-logos {
     height: 220px;
   }
-  
+
+  /* Mobile ball */
   .ppa-whoweare-ball {
     width: 50px;
     height: 50px;
   }
-  
+
   .ppa-folder-body {
     padding: 18px;
   }
-  
-  .ppa-folder-active {
-    padding: 15px;
-  }
-  
-  .ppa-folder-active-icon {
-    width: 50px;
-    height: 50px;
+
+  .ppa-folder-active-display {
+    width: 240px;
   }
 }
 
+
+/* =========================================================
+   ULTRA SMALL — 300px to 350px
+   ========================================================= */
+
 @media (max-width: 350px) {
+
+  .ppa-whoweare-wrapper {
+    gap: 60px;
+  }
+
   .ppa-whoweare-logos {
     height: 200px;
   }
-   .ppa-whoweare-title {
-  font-size: var(--font-size-lg);
+
+  .ppa-whoweare-title {
+    font-size: var(--font-size-lg);
   }
+
   .ppa-whoweare-ball {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ppa-folder-container {
+    max-width: 100%;
+  }
+
+  .ppa-folder-active-display {
+    width: 220px;
+    right: -5px;
   }
 }

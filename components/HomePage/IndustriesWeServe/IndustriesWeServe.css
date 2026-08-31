@@ -411,191 +411,228 @@
   }
 }
 
-/* Tablet (768px - 1023px) */
+/* =========================================================
+   RESPONSIVE — LAYOUT ONLY
+   FONT SIZES UNCHANGED
+   ========================================================= */
+
+/* Tablet: 768px - 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
   .ppa-industries {
     padding: 50px 0;
   }
-  
+
   .ppa-industries-header {
     margin-bottom: 30px;
   }
-  
-  .ppa-industries-title {
-    font-size: var(--font-size-3xl);
-  }
-  
+
   .ppa-industries-masonry {
     grid-template-columns: 1fr 1fr;
     gap: 14px;
   }
-  
+
   .ppa-industries-column {
     gap: 14px;
   }
-  
+
   .ppa-industries-col-3 {
     grid-column: 1 / 3;
     flex-direction: row;
+    gap: 14px;
   }
-  
+
   .ppa-industries-col-3 .ppa-industries-card-large,
   .ppa-industries-col-3 .ppa-industries-card-small {
     flex: 1;
     height: 180px;
   }
-  
+
   .ppa-industries-col-1 .ppa-industries-card-small {
     height: 180px;
   }
-  
+
   .ppa-industries-col-1 .ppa-industries-card-large {
     height: 200px;
   }
-  
+
   .ppa-industries-col-2 .ppa-industries-card-xsmall {
     height: 130px;
   }
-  
+
   .ppa-industries-col-2 .ppa-industries-card-xlarge {
     height: 170px;
   }
 }
 
-/* Mobile Large (480px - 767px) */
+
+/* Mobile: 480px - 767px */
 @media (min-width: 480px) and (max-width: 767px) {
   .ppa-industries {
     padding: 40px 0;
   }
-  
+
   .ppa-industries-header {
     margin-bottom: 25px;
   }
-  
-  .ppa-industries-title {
-    font-size: var(--font-size-2xl);
-  }
-  
-  .ppa-industries-body {
-    font-size: var(--font-size-xs);
-  }
-  
+
   .ppa-industries-masonry {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
-  
+
   .ppa-industries-column {
-    gap: 12px;
+    gap: 10px;
   }
-  
+
+  /* Third column remains horizontal */
   .ppa-industries-col-3 {
-    grid-column: 1;
-    flex-direction: column;
+    grid-column: 1 / 3;
+    flex-direction: row;
+    gap: 10px;
   }
-  
-  .ppa-industries-col-1 .ppa-industries-card-small,
-  .ppa-industries-col-1 .ppa-industries-card-large,
-  .ppa-industries-col-2 .ppa-industries-card-xsmall,
-  .ppa-industries-col-2 .ppa-industries-card-xlarge,
+
   .ppa-industries-col-3 .ppa-industries-card-large,
   .ppa-industries-col-3 .ppa-industries-card-small {
-    flex: 0 0 auto;
-    height: 160px;
+    flex: 1;
+    height: 145px;
+  }
+
+  .ppa-industries-col-1 .ppa-industries-card-small {
+    height: 130px;
+  }
+
+  .ppa-industries-col-1 .ppa-industries-card-large {
+    height: 175px;
+  }
+
+  .ppa-industries-col-2 .ppa-industries-card-xsmall {
+    height: 95px;
+  }
+
+  .ppa-industries-col-2 .ppa-industries-card-xlarge {
+    height: 145px;
   }
 }
 
-/* Mobile Small (300px - 479px) */
-@media (max-width: 479px) {
+
+/* Small Mobile: 300px - 479px */
+@media (min-width: 300px) and (max-width: 479px) {
   .ppa-industries {
     padding: 32px 0;
   }
-  
+
   .ppa-industries-header {
     margin-bottom: 20px;
   }
-  
-  .ppa-industries-title {
-    font-size: var(--font-size-xl);
-  }
-  
-  .ppa-industries-eyebrow-wrapper {
-    flex-direction: column;
+
+  /*
+   * Keep TWO columns.
+   * This is the important part.
+   */
+  .ppa-industries-masonry {
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
-  
-  .ppa-industries-eyebrow-line {
-    width: 30px;
-  }
-  
-  .ppa-industries-eyebrow {
-    font-size: var(--font-size-xs);
-  }
-  
-  .ppa-industries-body {
-    font-size: var(--font-size-xs);
-    text-align: center;
-  }
-  
-  .ppa-industries-btn {
-    width: 100%;
-    padding: 10px 16px;
-    font-size: var(--font-size-xs);
-  }
-  
-  .ppa-industries-masonry {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  
+
   .ppa-industries-column {
-    gap: 10px;
+    gap: 8px;
   }
-  
+
   .ppa-industries-card {
     border-radius: var(--radius-lg);
   }
-  
+
   .ppa-industries-card-inner {
     border-radius: var(--radius-lg);
   }
-  
-  .ppa-industries-col-1 .ppa-industries-card-small,
-  .ppa-industries-col-1 .ppa-industries-card-large,
-  .ppa-industries-col-2 .ppa-industries-card-xsmall,
-  .ppa-industries-col-2 .ppa-industries-card-xlarge,
+
+  /* Third column spans both columns */
+  .ppa-industries-col-3 {
+    grid-column: 1 / 3;
+    flex-direction: row;
+    gap: 8px;
+  }
+
   .ppa-industries-col-3 .ppa-industries-card-large,
   .ppa-industries-col-3 .ppa-industries-card-small {
-    height: 140px;
+    flex: 1;
+    height: 120px;
   }
-  
+
+  /* Column 1 */
+  .ppa-industries-col-1 .ppa-industries-card-small {
+    height: 105px;
+  }
+
+  .ppa-industries-col-1 .ppa-industries-card-large {
+    height: 145px;
+  }
+
+  /* Column 2 */
+  .ppa-industries-col-2 .ppa-industries-card-xsmall {
+    height: 75px;
+  }
+
+  .ppa-industries-col-2 .ppa-industries-card-xlarge {
+    height: 115px;
+  }
+
+  /* Icon sizing only */
   .ppa-industries-card-icon {
-    width: 30px;
-    height: 30px;
-    top: 10px;
-    right: 10px;
+    width: 28px;
+    height: 28px;
+    top: 8px;
+    right: 8px;
   }
-  
-  .ppa-industries-card-name {
-    font-size: var(--font-size-lg);
+
+  .ppa-industries-card-icon svg {
+    width: 15px;
+    height: 15px;
   }
-  
+
   .ppa-industries-card-name-wrapper {
-    padding: 16px 12px 10px;
+    padding: 12px 8px 8px;
+    gap: 4px;
+  }
+
+  .ppa-industries-card-name-line {
+    height: 3px;
   }
 }
 
-/* Ultra Small (300px - 350px) */
-@media (max-width: 350px) {
-  .ppa-industries-col-1 .ppa-industries-card-small,
-  .ppa-industries-col-1 .ppa-industries-card-large,
-  .ppa-industries-col-2 .ppa-industries-card-xsmall,
-  .ppa-industries-col-2 .ppa-industries-card-xlarge,
+
+/* Ultra Small: 300px - 350px */
+@media (min-width: 300px) and (max-width: 350px) {
+  .ppa-industries-masonry {
+    gap: 6px;
+  }
+
+  .ppa-industries-column {
+    gap: 6px;
+  }
+
+  .ppa-industries-col-3 {
+    gap: 6px;
+  }
+
+  .ppa-industries-col-1 .ppa-industries-card-small {
+    height: 90px;
+  }
+
+  .ppa-industries-col-1 .ppa-industries-card-large {
+    height: 125px;
+  }
+
+  .ppa-industries-col-2 .ppa-industries-card-xsmall {
+    height: 65px;
+  }
+
+  .ppa-industries-col-2 .ppa-industries-card-xlarge {
+    height: 100px;
+  }
+
   .ppa-industries-col-3 .ppa-industries-card-large,
   .ppa-industries-col-3 .ppa-industries-card-small {
-    height: 120px;
-  }
-  .ppa-industries-title {
-    font-size: var(--font-size-lg);
+    height: 100px;
   }
 }

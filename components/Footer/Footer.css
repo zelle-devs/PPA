@@ -1,7 +1,11 @@
 /* ============================================
    PPA Footer.css - Compact Premium
    ============================================ */
-
+.zelle{
+  color: var(--color-accent-magenta);
+  font-weight: bold;
+  cursor: pointer;
+}
 .ppa-footer {
   position: relative;
   overflow: hidden;
@@ -219,7 +223,7 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 12px 0;
   border-top: 1px solid rgba(35, 54, 109, 0.06);
 }

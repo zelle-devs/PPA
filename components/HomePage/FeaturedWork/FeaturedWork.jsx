@@ -10,6 +10,10 @@ const FeaturedWork = () => {
   const [cardsPerView, setCardsPerView] = useState(3)
   const sliderRef = useRef(null)
 
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollDelta, setScrollDelta] = useState(0)
+
   const projects = [
     {
       id: 1,
@@ -21,7 +25,6 @@ const FeaturedWork = () => {
       badge1: 'Packaging',
       badge2: 'Premium',
       bgColor: 'linear-gradient(135deg, #F0F4FA 0%, #DCE5F0 100%)',
-       darkBgColor: 'linear-gradient(135deg, #C8D8EC 0%, #9BB8D8 100%)',
       accentColor: '#337CC7',
     },
     {
@@ -34,7 +37,6 @@ const FeaturedWork = () => {
       badge1: 'Advertising',
       badge2: 'Retail',
       bgColor: 'linear-gradient(135deg, #FDF0F4 0%, #F5D0DC 100%)',
-      darkBgColor: 'linear-gradient(135deg, #F0C0D4 0%, #D890B0 100%)',
       accentColor: '#C62F60',
     },
     {
@@ -47,7 +49,6 @@ const FeaturedWork = () => {
       badge1: 'Print',
       badge2: 'Rebrand',
       bgColor: 'linear-gradient(135deg, #FDF8EE 0%, #F5E3C0 100%)',
-      darkBgColor: 'linear-gradient(135deg, #F0D8A8 0%, #D8B870 100%)',
       accentColor: '#E8AC49',
     },
     {
@@ -88,7 +89,6 @@ const FeaturedWork = () => {
     }
   ]
 
-  // Responsive cards per view
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1023) {
@@ -119,12 +119,36 @@ const FeaturedWork = () => {
   const canNext = currentIndex < maxIndex
   const canPrev = currentIndex > 0
 
+  // Touch and Mouse Drag Handlers
+  const handleDragStart = (e) => {
+    setIsDragging(true)
+    setStartX(e.clientX || e.touches?.[0]?.clientX || 0)
+    setScrollDelta(0)
+  }
+
+  const handleDragMove = (e) => {
+    if (!isDragging) return
+    const currentX = e.clientX || e.touches?.[0]?.clientX || 0
+    const delta = currentX - startX
+    setScrollDelta(delta)
+  }
+
+  const handleDragEnd = () => {
+    if (!isDragging) return
+    setIsDragging(false)
+
+    if (scrollDelta < -50 && canNext) {
+      handleNext()
+    } else if (scrollDelta > 50 && canPrev) {
+      handlePrev()
+    }
+    setScrollDelta(0)
+  }
+
   return (
     <section className="ppa-featured">
       <div className="container2">
-        {/* Top Row - Header Left + Arrows Right */}
         <div className="ppa-featured-top">
-          {/* Header - Left */}
           <motion.div 
             className="ppa-featured-header"
             initial={{ opacity: 0, x: -60 }}
@@ -152,60 +176,51 @@ const FeaturedWork = () => {
                 See All Work <ArrowRight size={16} />
               </a>
             </div>
-          {/* Arrows - Right - Only show if more than cardsPerView */}
-{projects.length > cardsPerView && (
-  <motion.div 
-    className="ppa-featured-arrows"
-    initial={{ opacity: 0, x: 60 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true, margin: "-10%" }}
-    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-  >
-    <button 
-      className={`ppa-featured-arrow ${!canPrev ? 'disabled' : ''}`}
-      onClick={handlePrev}
-      disabled={!canPrev}
-      aria-label="Previous"
-    >
-      <ArrowLeft size={20} />
-    </button>
-    <button 
-      className={`ppa-featured-arrow ${!canNext ? 'disabled' : ''}`}
-      onClick={handleNext}
-      disabled={!canNext}
-      aria-label="Next"
-    >
-      <ArrowRight size={20} />
-    </button>
-  </motion.div>
-)}
           </motion.div>
 
+          {projects.length > cardsPerView && (
+            <div className="ppa-featured-arrows">
+              <button 
+                className={`ppa-featured-arrow ${!canPrev ? 'disabled' : ''}`}
+                onClick={handlePrev}
+                disabled={!canPrev}
+                aria-label="Previous"
+              >
+                <ArrowLeft size={20} />
+              </button>
+              <button 
+                className={`ppa-featured-arrow ${!canNext ? 'disabled' : ''}`}
+                onClick={handleNext}
+                disabled={!canNext}
+                aria-label="Next"
+              >
+                <ArrowRight size={20} />
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* Cards Slider */}
-        <div className="ppa-featured-slider-wrapper">
+        <div 
+          className="ppa-featured-slider-wrapper"
+          onMouseDown={handleDragStart}
+          onMouseMove={handleDragMove}
+          onMouseUp={handleDragEnd}
+          onMouseLeave={handleDragEnd}
+          onTouchStart={handleDragStart}
+          onTouchMove={handleDragMove}
+          onTouchEnd={handleDragEnd}
+        >
           <div 
             className="ppa-featured-slider"
             ref={sliderRef}
             style={{ transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)` }}
           >
             {projects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
                 className="ppa-featured-card-wrapper"
-                style={{ flex: `0 0 calc(${100 / cardsPerView}% - ${cardsPerView > 1 ? 14 : 0}px)` }}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-8%' }}
-                transition={{ 
-                  delay: 0.1 * index, 
-                  duration: 0.7, 
-                  ease: [0.22, 1, 0.36, 1] 
-                }}
               >
                 <div className="ppa-featured-card" style={{ background: project.bgColor }}>
-                  {/* Top Row - Badges + Icon */}
                   <div className="ppa-featured-card-top">
                     <div className="ppa-featured-card-badges">
                       <span className="ppa-featured-card-badge" style={{ background: `${project.accentColor}15`, color: project.accentColor, borderColor: `${project.accentColor}30` }}>
@@ -222,7 +237,6 @@ const FeaturedWork = () => {
                     </div>
                   </div>
 
-                  {/* Content - Top 50% */}
                   <div className="ppa-featured-card-content">
                     <span className="ppa-featured-card-client" style={{ color: project.accentColor }}>
                       {project.client}
@@ -235,7 +249,6 @@ const FeaturedWork = () => {
                     </p>
                   </div>
 
-                  {/* Image - Bottom 50% */}
                   <div className="ppa-featured-card-image-wrapper">
                     <Image 
                       src={project.image} 
@@ -248,7 +261,7 @@ const FeaturedWork = () => {
                     <div className="ppa-featured-card-image-overlay" style={{ background: `linear-gradient(180deg, transparent 0%, ${project.accentColor}15 100%)` }}></div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

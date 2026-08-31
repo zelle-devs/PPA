@@ -6,7 +6,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   justify-content: center;
 }
 
@@ -64,21 +64,16 @@
   }
 }
 
-/* Zigzag effect via alternating translateY */
+/* Zigzag effect — each item shares the same animation, but gets its own
+   animationDelay from JSX (index-based). That's what makes the up/down
+   motion ripple across the row like a snake instead of two groups
+   popping between two positions. */
 .ppa-capabilities-marquee-item {
   display: flex;
   align-items: center;
   gap: 28px;
   flex-shrink: 0;
-  animation: zigzag 2s ease-in-out infinite;
-}
-
-.ppa-capabilities-marquee-item:nth-child(odd) {
-  animation-delay: 0s;
-}
-
-.ppa-capabilities-marquee-item:nth-child(even) {
-  animation-delay: 1s;
+  animation: zigzag 3s ease-in-out infinite;
 }
 
 @keyframes zigzag {
@@ -86,10 +81,10 @@
     transform: translateY(0);
   }
   25% {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
   75% {
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
 }
 

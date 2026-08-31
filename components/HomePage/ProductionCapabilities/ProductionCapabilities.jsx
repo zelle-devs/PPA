@@ -18,13 +18,22 @@ const ProductionCapabilities = () => {
     '/icon.png', '/logo1.png', '/logo2.png', '/icon.png', '/logo1.png', '/logo2.png',
   ]
 
+  // Small, increasing delay per item (wrapped on the original logo count so the
+  // duplicated half lines up seamlessly) — this is what turns the bounce into
+  // a travelling wave instead of two groups jumping together.
+  const waveDelay = (index) => `${(index % marqueeLogos.length) * 0.35}s`
+
   return (
     <section className="ppa-capabilities">
       {/* Top Zigzag Marquee - Right to Left */}
 <div className="ppa-capabilities-marquee ppa-capabilities-marquee-top">
   <div className="ppa-capabilities-marquee-track ppa-capabilities-track-rtl">
     {[...marqueeLogos, ...marqueeLogos].map((logo, index) => (
-      <div key={index} className="ppa-capabilities-marquee-item">
+      <div
+        key={index}
+        className="ppa-capabilities-marquee-item"
+        style={{ animationDelay: waveDelay(index) }}
+      >
         <Image src={logo} alt="Logo" width={70} height={70} unoptimized={true} className="ppa-capabilities-marquee-logo" />
         {/* <span className="ppa-capabilities-marquee-dot" style={{ background: index % 3 === 0 ? '#337CC7' : index % 3 === 1 ? '#C62F60' : '#E8AC49' }}></span> */}
       </div>
@@ -75,7 +84,11 @@ const ProductionCapabilities = () => {
 <div className="ppa-capabilities-marquee ppa-capabilities-marquee-bottom">
   <div className="ppa-capabilities-marquee-track ppa-capabilities-track-ltr">
     {[...marqueeLogos, ...marqueeLogos].map((logo, index) => (
-      <div key={index} className="ppa-capabilities-marquee-item">
+      <div
+        key={index}
+        className="ppa-capabilities-marquee-item"
+        style={{ animationDelay: waveDelay(index) }}
+      >
         <Image src={logo} alt="Logo" width={70} height={70} unoptimized={true} className="ppa-capabilities-marquee-logo" />
         {/* <span className="ppa-capabilities-marquee-dot" style={{ background: index % 3 === 0 ? '#E8AC49' : index % 3 === 1 ? '#C62F60' : '#337CC7' }}></span> */}
       </div>

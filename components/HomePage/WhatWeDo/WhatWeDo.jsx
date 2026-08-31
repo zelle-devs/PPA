@@ -128,13 +128,14 @@ const springLift = useSpring(pointerLift, { stiffness: 280, damping: 20, mass: 0
   const rotate = useTransform([idleRotate, springTilt], ([i, p]) => i + p)
   const y = useTransform([idleY, springLift], ([i, p]) => i + p)
 
-  const handlePointerMove = (e) => {
-    if (!cardRef.current) return
-    const rect = cardRef.current.getBoundingClientRect()
-    const relX = (e.clientX - rect.left) / rect.width - 0.5
-    // pointerTilt.set(relX * 16)
-    pointerTilt.set(relX * 22)
-  }
+const handlePointerMove = (e) => {
+  if (!cardRef.current || e.pointerType === 'touch') return
+
+  const rect = cardRef.current.getBoundingClientRect()
+  const relX = (e.clientX - rect.left) / rect.width - 0.5
+
+  pointerTilt.set(relX * 22)
+}
 //   const handlePointerEnter = () => pointerLift.set(-12)
 const handlePointerEnter = () => pointerLift.set(0)
   const handlePointerLeave = () => {

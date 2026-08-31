@@ -56,7 +56,7 @@
 .ppa-section2-eyebrow-line {
   width: 40px;
   height: 3px;
- background: linear-gradient(
+  background: linear-gradient(
     90deg,
     var(--color-accent-blue) 0%,
     var(--color-accent-blue) 33.33%,
@@ -65,7 +65,7 @@
     var(--color-accent-yellow) 66.66%,
     var(--color-accent-yellow) 100%
   );
-    border-radius: var(--radius-full);
+  border-radius: var(--radius-full);
   display: inline-block;
 }
 
@@ -159,7 +159,7 @@
     inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* ============ RIGHT COLLAGE - DIAGONAL STAIRCASE ============ */
+/* ============ RIGHT COLLAGE - DIAGONAL STAIRCASE (DESKTOP) ============ */
 .ppa-section2-collage {
   position: relative;
   min-height: 550px;
@@ -204,7 +204,7 @@
   transform: scale(1.01);
 }
 
-/* Diagonal Staircase Positioning - Title level se start */
+/* Diagonal Staircase Positioning - Desktop */
 .ppa-section2-card-1 {
   top: 80px;
   left: 0;
@@ -239,6 +239,7 @@
   left: 650px;
   z-index: 5;
 }
+
 /* Tooltip - Card ke UPAR show hoga */
 .ppa-section2-tooltip {
   position: absolute;
@@ -278,7 +279,6 @@
   border-top: 8px solid #1D1D1D;
 }
 
-
 /* Hover Effects */
 .ppa-section2-card:hover {
   z-index: 10;
@@ -299,16 +299,9 @@
   top: -60px;
 }
 
-.ppa-section2-card:hover .ppa-section2-arrow-line {
-  transform: translateY(-50%) scaleX(1);
-}
-
 /* ============ RESPONSIVE ============ */
 /* Large Desktop (1440px+) */
 @media (min-width: 1440px) {
-  .ppa-section2-title {
-  font-size: var(--font-size-4xl);
-  }
   .ppa-section2-wrapper {
     gap: 80px;
   }
@@ -333,9 +326,6 @@
 
 /* Desktop (1024px - 1439px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
-  .ppa-section2-title {
-  font-size: var(--font-size-4xl);
-  }
   .ppa-section2-wrapper {
     gap: 40px;
   }
@@ -360,31 +350,67 @@
 
 /* Tablet (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .ppa-section2-title {
-  font-size: var(--font-size-3xl);
-  }
   .ppa-section2-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
+  .ppa-section2-content {
+    text-align: center;
+  }
+  
+  .ppa-section2-eyebrow-wrapper {
+    justify-content: center;
+  }
+  
+  .ppa-section2-body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .ppa-section2-cta {
+    text-align: center;
+  }
+  
+  /* Mobile Grid Pattern - 3 columns, 2 rows */
   .ppa-section2-collage {
-    min-height: 450px;
-    padding-top: 60px;
-    padding-left: 10px;
+    position: relative;
+    min-height: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
   .ppa-section2-card {
-    width: 160px;
-    height: 220px;
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5/7;
   }
   
-  .ppa-section2-card-1 { top: 60px; left: 0; }
-  .ppa-section2-card-2 { top: 90px; left: 120px; }
-  .ppa-section2-card-3 { top: 120px; left: 240px; }
-  .ppa-section2-card-4 { top: 150px; left: 360px; }
-  .ppa-section2-card-5 { top: 180px; left: 480px; }
-  .ppa-section2-card-6 { top: 210px; left: 600px; }
+  .ppa-section2-card:nth-child(2),
+  .ppa-section2-card:nth-child(5) {
+    transform: translateY(20px);
+  }
+  
+  .ppa-section2-card:nth-child(3),
+  .ppa-section2-card:nth-child(6) {
+    transform: translateY(40px);
+  }
+  
+  .ppa-section2-card:hover {
+    transform: translateY(20px) scale(1.05);
+  }
+  
+  .ppa-section2-card:nth-child(3):hover,
+  .ppa-section2-card:nth-child(6):hover {
+    transform: translateY(40px) scale(1.05);
+  }
 }
 
 /* Mobile Large (480px - 767px) */
@@ -392,6 +418,7 @@
   .ppa-section2 {
     padding: 50px 0;
   }
+  
   .ppa-section2-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -399,10 +426,6 @@
   
   .ppa-section2-content {
     padding-top: 0;
-  }
-  
-  .ppa-section2-title {
-    font-size: var(--font-size-2xl);
     text-align: center;
   }
   
@@ -420,23 +443,35 @@
     text-align: center;
   }
   
+  /* Mobile Grid Pattern - 2 columns, 3 rows */
   .ppa-section2-collage {
-    min-height: 400px;
-    padding-top: 40px;
-    padding-left: 0;
+    position: relative;
+    min-height: auto;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   .ppa-section2-card {
-    width: 130px;
-    height: 180px;
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
   }
   
-  .ppa-section2-card-1 { top: 40px; left: 0; }
-  .ppa-section2-card-2 { top: 60px; left: 90px; }
-  .ppa-section2-card-3 { top: 80px; left: 180px; }
-  .ppa-section2-card-4 { top: 100px; left: 270px; }
-  .ppa-section2-card-5 { top: 120px; left: 360px; }
-  .ppa-section2-card-6 { top: 140px; left: 460px; }
+  .ppa-section2-card:nth-child(even) {
+    transform: translateY(25px);
+  }
+  
+  .ppa-section2-card:hover {
+    transform: translateY(25px) scale(1.05);
+  }
+  
   .ppa-section2-tooltip {
     font-size: 9px;
     padding: 8px 12px;
@@ -449,7 +484,7 @@
   .ppa-section2 {
     padding: 40px 0;
   }
-
+  
   .ppa-section2-wrapper {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -457,17 +492,13 @@
   
   .ppa-section2-content {
     padding-top: 0;
-  }
-  
-  .ppa-section2-title {
-    font-size: var(--font-size-xl);
     text-align: center;
   }
   
   .ppa-section2-eyebrow-wrapper {
     flex-direction: column;
     gap: 8px;
-    text-align: center;
+    align-items: center;
   }
   
   .ppa-section2-eyebrow-line {
@@ -476,6 +507,10 @@
   
   .ppa-section2-eyebrow {
     font-size: var(--font-size-xs);
+  }
+  
+  .ppa-section2-title {
+    font-size: var(--font-size-2xl);
   }
   
   .ppa-section2-body {
@@ -495,18 +530,30 @@
     font-size: var(--font-size-xs);
   }
   
+  /* Mobile Grid Pattern - 2 columns, 3 rows */
   .ppa-section2-collage {
-    min-height: 350px;
-    padding-top: 30px;
-    padding-left: 0;
-    overflow-x: auto;
-    overflow-y: visible;
+    position: relative;
+    min-height: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 350px;
+    margin: 0 auto;
   }
   
   .ppa-section2-card {
-    width: 110px;
-    height: 150px;
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
     border-radius: var(--radius-lg);
+  }
+  
+  .ppa-section2-card:nth-child(even) {
+    transform: translateY(20px);
   }
   
   .ppa-section2-card-img {
@@ -518,12 +565,9 @@
     border-width: 2px;
   }
   
-  .ppa-section2-card-1 { top: 30px; left: 0; }
-  .ppa-section2-card-2 { top: 50px; left: 80px; }
-  .ppa-section2-card-3 { top: 70px; left: 160px; }
-  .ppa-section2-card-4 { top: 90px; left: 240px; }
-  .ppa-section2-card-5 { top: 200px; left: 90px; }
-  .ppa-section2-card-6 { top: 180px; left: 20px; }
+  .ppa-section2-card:hover {
+    transform: translateY(20px) scale(1.03);
+  }
   
   .ppa-section2-tooltip {
     font-size: 8px;
@@ -531,37 +575,31 @@
     top: -40px;
     white-space: nowrap;
   }
-  
-  .ppa-section2-arrow-line {
-    width: 25px;
-    right: -25px;
-  }
 }
 
 /* Ultra Small (300px - 350px) */
 @media (max-width: 350px) {
   .ppa-section2-collage {
-    min-height: 320px;
-    padding-top: 25px;
-  }
-  .ppa-section2-title {
-    font-size: var(--font-size-lg);
-    text-align: center;
-  }
-  .ppa-section2-card {
-    width: 95px;
-    height: 130px;
+    gap: 12px;
+    padding: 8px;
+    max-width: 300px;
   }
   
-  .ppa-section2-card-1 { top: 25px; left: 0; }
-  .ppa-section2-card-2 { top: 42px; left: 68px; }
-  .ppa-section2-card-3 { top: 59px; left: 136px; }
-  .ppa-section2-card-4 { top: 76px; left: 204px; }
-  .ppa-section2-card-5 { top: 93px; left: 272px; }
+  .ppa-section2-card {
+    aspect-ratio: 3/4;
+  }
+  
+  .ppa-section2-title {
+    font-size: var(--font-size-xl);
+  }
   
   .ppa-section2-tooltip {
     font-size: 7px;
     padding: 5px 8px;
     top: -35px;
+  }
+  
+  .ppa-section2-card:nth-child(even) {
+    transform: translateY(15px);
   }
 }

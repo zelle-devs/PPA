@@ -389,53 +389,252 @@
   }
 }
 
-/* Below 1024px: wire stays decorative, cards drop into a simple stacked flow */
+
+/* =========================================================
+   TABLET + MOBILE
+   300px → 1023px
+   ========================================================= */
+
 @media (max-width: 1023px) {
+
+  .ppa-whatwedo {
+    padding: 60px 0;
+  }
+
+  .ppa-whatwedo-header {
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+
+  /*
+   * Keep desktop typography.
+   * No font-size override here intentionally.
+   */
+  .ppa-whatwedo-title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .ppa-whatwedo-wire-section {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+
+  /*
+   * The horizontal SVG wire is only for desktop.
+   * Mobile gets a vertical connector instead.
+   */
+  .ppa-whatwedo-wire-svg {
+    display: none;
+  }
+
+  .ppa-whatwedo-wire-glow {
+    display: none;
+  }
+
+  /*
+   * Stage becomes the full vertical card area.
+   */
+  .ppa-whatwedo-wire-stage {
+    height: auto;
+    min-height: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    perspective: none;
+  }
+
+  /*
+   * Cards become a vertical stack.
+   */
+  .ppa-whatwedo-pins {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 55px;
+    margin-top: 0;
+
+    /*
+     * This creates the vertical wire coordinate system.
+     */
+    padding: 0;
+
+    z-index: 2;
+  }
+
+  /*
+   * =======================================================
+   * VERTICAL WIRE
+   * =======================================================
+   *
+   * The line runs from the first clip through all cards.
+   * Cards themselves sit above the line, so the line is
+   * naturally hidden behind each card body.
+   */
+  .ppa-whatwedo-pins::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 3px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+      180deg,
+      #abaeb5 0%,
+      #abaeb5 100%
+    );
+
+    border-radius: 999px;
+
+    box-shadow:
+      0 0 4px rgba(171, 174, 181, 0.35),
+      0 0 10px rgba(171, 174, 181, 0.12);
+
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /*
+   * Small highlight on vertical wire.
+   */
+  .ppa-whatwedo-pins::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 1px);
+
+    width: 1px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /*
+   * Individual pin becomes normal-flow element.
+   */
+  .ppa-whatwedo-pin {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: min(420px, 100%);
+
+    transform: none;
+
+    z-index: 2;
+
+    pointer-events: auto;
+  }
+
+  /*
+   * Card stays above the vertical wire.
+   */
+  .ppa-whatwedo-card {
+    position: relative;
+    z-index: 2;
+  }
+
+  /*
+   * Clip remains centered on vertical wire.
+   */
+  .ppa-whatwedo-clip {
+    position: relative;
+    z-index: 4;
+  }
+
+  /*
+   * Make card body fully opaque so vertical wire doesn't
+   * visually pass through the card.
+   */
+  .ppa-whatwedo-card-body {
+    position: relative;
+    z-index: 3;
+
+    background: #FFFFFF;
+  }
+
+  /*
+   * Keep image responsive.
+   */
+  .ppa-whatwedo-card-image-wrapper {
+    width: 100%;
+    height: 190px;
+  }
+
+  .ppa-whatwedo-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   768px → 1023px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .ppa-whatwedo {
+    padding: 60px 0;
+  }
+
+  .ppa-whatwedo-wire-section {
+    padding: 0 40px;
+  }
+
+  .ppa-whatwedo-pins {
+    gap: 65px;
+  }
+
+  .ppa-whatwedo-pin {
+    width: min(460px, 100%);
+  }
+
+  .ppa-whatwedo-card-image-wrapper {
+    height: 210px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   480px → 767px
+   ========================================================= */
+
+@media (min-width: 480px) and (max-width: 767px) {
+
   .ppa-whatwedo {
     padding: 50px 0;
   }
 
   .ppa-whatwedo-header {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
+    padding: 0 20px;
   }
 
+  /*
+   * Typography intentionally unchanged.
+   */
   .ppa-whatwedo-title {
-    font-size: var(--font-size-3xl);
-  }
-
-  .ppa-whatwedo-wire-stage {
-    height: 80px;
-    padding-bottom: 0;
-  }
-
-  .ppa-whatwedo-pins {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    margin-top: 40px;
-  }
-
-  .ppa-whatwedo-pin {
-    position: static;
-    transform: none;
-    width: 100%;
-    max-width: 400px;
-  }
-}
-
-@media (min-width: 480px) and (max-width: 767px) {
-  .ppa-whatwedo {
-    padding: 40px 0;
-  }
-
-  .ppa-whatwedo-header {
-    margin-bottom: 40px;
-  }
-
-  .ppa-whatwedo-title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-4xl);
   }
 
   .ppa-whatwedo-eyebrow-wrapper {
@@ -443,102 +642,158 @@
   }
 
   .ppa-whatwedo-eyebrow-line {
-    width: 25px;
+    width: 30px;
   }
 
-  .ppa-whatwedo-wire-stage {
-    height: 60px;
+  .ppa-whatwedo-wire-section {
+    padding: 0 18px;
   }
 
   .ppa-whatwedo-pins {
-    gap: 40px;
-    margin-top: 30px;
+    gap: 48px;
   }
 
   .ppa-whatwedo-pin {
-    max-width: 350px;
+    width: min(390px, 100%);
   }
 
   .ppa-whatwedo-card-image-wrapper {
-    height: 160px;
+    height: 180px;
+  }
+
+  .ppa-whatwedo-card-content {
+    padding: 24px 20px 20px;
   }
 }
 
-@media (max-width: 479px) {
+
+/* =========================================================
+   SMALL MOBILE
+   351px → 479px
+   ========================================================= */
+
+@media (min-width: 351px) and (max-width: 479px) {
+
   .ppa-whatwedo {
-    padding: 32px 0;
+    padding: 45px 0;
   }
 
   .ppa-whatwedo-header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    padding: 0 16px;
   }
 
+  /*
+   * Keep typography consistent.
+   */
   .ppa-whatwedo-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-4xl);
   }
 
   .ppa-whatwedo-eyebrow-wrapper {
-    flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .ppa-whatwedo-eyebrow-line {
     width: 30px;
   }
 
-  .ppa-whatwedo-eyebrow {
-    font-size: var(--font-size-xs);
-  }
-
-  .ppa-whatwedo-btn {
-    width: 100%;
-    padding: 12px 18px;
-    font-size: var(--font-size-xs);
-  }
-
-  .ppa-whatwedo-wire-stage {
-    height: 50px;
+  .ppa-whatwedo-wire-section {
+    padding: 0 14px;
   }
 
   .ppa-whatwedo-pins {
-    gap: 35px;
-    margin-top: 25px;
+    gap: 42px;
   }
 
   .ppa-whatwedo-pin {
+    width: 100%;
+  }
+
+  .ppa-whatwedo-card-image-wrapper {
+    height: 165px;
+  }
+
+  .ppa-whatwedo-card-content {
+    padding: 22px 18px 18px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   300px → 350px
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+  .ppa-whatwedo {
+    padding: 35px 0;
+  }
+
+  .ppa-whatwedo-header {
+    margin-bottom: 35px;
+    padding: 0 12px;
+  }
+
+  /*
+   * No font shrinking.
+   */
+  .ppa-whatwedo-title {
+    font-size: var(--font-size-4xl);
+    letter-spacing: -1px;
+  }
+
+  .ppa-whatwedo-eyebrow-wrapper {
+    gap: 8px;
+  }
+
+  .ppa-whatwedo-eyebrow-line {
+    width: 25px;
+  }
+
+  .ppa-whatwedo-wire-section {
+    padding: 0 10px;
+  }
+
+  .ppa-whatwedo-pins {
+    gap: 38px;
+  }
+
+  .ppa-whatwedo-pin {
+    width: 100%;
     max-width: 100%;
   }
 
   .ppa-whatwedo-card-image-wrapper {
-    height: 150px;
+    height: 140px;
   }
 
   .ppa-whatwedo-card-content {
-    padding: 20px 16px 16px;
+    padding: 18px 14px 14px;
   }
 
   .ppa-whatwedo-card-title {
-    font-size: var(--font-size-lg);
+    /*
+     * Keep your global font size.
+     */
+    font-size: var(--font-size-xl);
   }
 
   .ppa-whatwedo-card-desc {
     font-size: var(--font-size-xs);
   }
 
-  .ppa-whatwedo-card-icon {
-    width: 40px;
-    height: 40px;
-    bottom: 15px;
-    right: 15px;
-  }
-
+  /*
+   * Smaller clip only for very narrow screens.
+   */
   .ppa-whatwedo-clip {
-    width: 50px;
+    width: 48px;
     height: 40px;
   }
 
   .ppa-whatwedo-clip-top {
-    width: 46px;
+    width: 44px;
     height: 20px;
   }
 
@@ -548,26 +803,24 @@
   }
 }
 
-@media (max-width: 350px) {
-  .ppa-whatwedo-card-image-wrapper {
-    height: 130px;
-  }
 
-  .ppa-whatwedo-card-content {
-    padding: 16px 12px 12px;
-  }
-.ppa-whatwedo-title {
-  font-size: var(--font-size-lg);
-  }
-  .ppa-whatwedo-clip {
-    width: 45px;
-    height: 35px;
-  }
-}
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .ppa-whatwedo-wire-path {
     animation: none;
     stroke-dashoffset: 0;
   }
+
+  .ppa-whatwedo-card-image {
+    transition: none;
+  }
+
+  .ppa-whatwedo-card-body {
+    transition: none;
+  }
 }
+

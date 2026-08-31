@@ -52,7 +52,7 @@ const RequestQuote2 = ({
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <Image 
-              src="/pattern.png" 
+              src="/pattern2.png" 
               alt="Print Production" 
               className="ppa-requestquote2-image"
               width={600}
@@ -70,7 +70,7 @@ const RequestQuote2 = ({
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             <Image 
-              src="/pattern.png" 
+              src="/pattern2.png" 
               alt="Packaging" 
               className="ppa-requestquote2-image"
               width={400}

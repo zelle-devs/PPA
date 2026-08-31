@@ -177,6 +177,9 @@ export default function Footer({
           <p className="ppa-footer-copyright">
             © {year} Print, Pack & Advertising (PPA). All rights reserved.
           </p>
+           <p className="ppa-footer-copyright">
+            Designed and Managed by <span className="zelle"><a href='https://zellesolutions.com/' target='_blank'>Zelle Solutions Pvt. Ltd</a></span>
+          </p>
         </div>
       </div>
     </footer>

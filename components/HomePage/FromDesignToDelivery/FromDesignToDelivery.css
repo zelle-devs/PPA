@@ -151,11 +151,8 @@ background: linear-gradient(
   left: 0;
   right: 0;
   z-index: 3;
-  padding: 24px 0;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
-  /* background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(8px); */
-  /* -webkit-backdrop-filter: blur(8px); */
+  padding: 14px 0;
+
   overflow: hidden;
 }
 
@@ -227,8 +224,8 @@ background: linear-gradient(
   position: absolute;
   top: 0;
   left: 0;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   z-index: 2;
   will-change: transform;
   border: 2px solid;
@@ -274,7 +271,7 @@ background: linear-gradient(
   top: 90px;
   right: 20px;
   bottom: 20px;
-  width: 35%;
+  width: 60%;
   z-index: 4;
   display: flex;
   flex-direction: column;
@@ -382,31 +379,37 @@ background: linear-gradient(
   .ppa-fdtd {
     padding: 40px 0;
   }
-  
+
   .ppa-fdtd-title {
     font-size: var(--font-size-2xl);
   }
-  
+
   .ppa-fdtd-main {
     min-height: auto;
     display: flex;
     flex-direction: column;
   }
-  
+
   .ppa-fdtd-marquee {
     position: relative;
+    order: 1!important;
   }
-  
+
+  /* Full width ball area */
   .ppa-fdtd-ballpit {
+    order: 3!important;
     position: relative;
     top: auto;
     left: auto;
     right: auto;
     bottom: auto;
-    height: 250px;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
   }
-  
+
   .ppa-fdtd-steps {
+    order: 2!important;
     position: relative;
     top: auto;
     right: auto;
@@ -415,25 +418,32 @@ background: linear-gradient(
     padding: 20px;
     gap: 0;
   }
-  
+
   .ppa-fdtd-step {
     padding: 8px 0;
   }
-  
+
   .ppa-fdtd-step-title,
   .ppa-fdtd-step-desc {
     color: #1D1D1D;
   }
-  
+
+  /* Mobile balls */
   .ppa-fdtd-ball {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
-  
+
+  /* Keep logo nicely inside ball */
+  .ppa-fdtd-ball-img {
+    width: 62%;
+    height: 62%;
+  }
+
   .ppa-fdtd-marquee-text {
     font-size: var(--font-size-xl);
   }
-  
+
   .ppa-fdtd-marquee-logo {
     width: 35px;
     height: 35px;
@@ -444,56 +454,64 @@ background: linear-gradient(
   .ppa-fdtd {
     padding: 32px 0;
   }
-  
+
   .ppa-fdtd-header {
     margin-bottom: 30px;
   }
+
   .ppa-fdtd-eyebrow {
     font-size: var(--font-size-xs);
   }
+
   .ppa-fdtd-title {
     font-size: var(--font-size-xl);
   }
-  
+
   .ppa-fdtd-eyebrow-wrapper {
     flex-direction: column;
     gap: 8px;
   }
-  
+
   .ppa-fdtd-body {
     font-size: var(--font-size-xs);
   }
-  
+
   .ppa-fdtd-btn {
     width: 100%;
     padding: 10px 16px;
     font-size: var(--font-size-xs);
   }
-  
+
   .ppa-fdtd-marquee-text {
     font-size: var(--font-size-lg);
     letter-spacing: 2px;
   }
-  
+
   .ppa-fdtd-marquee-logo {
     width: 28px;
     height: 28px;
     padding: 4px;
   }
-  
+
+  /* Smaller ball pit */
   .ppa-fdtd-ballpit {
     height: 200px;
   }
-  
+
   .ppa-fdtd-ball {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
   }
-  
+
+  .ppa-fdtd-ball-img {
+    width: 60%;
+    height: 60%;
+  }
+
   .ppa-fdtd-step-title {
     font-size: 10px;
   }
-  
+
   .ppa-fdtd-step-desc {
     font-size: 8px;
   }
@@ -503,11 +521,18 @@ background: linear-gradient(
   .ppa-fdtd-ballpit {
     height: 180px;
   }
+
   .ppa-fdtd-title {
     font-size: var(--font-size-lg);
   }
+
   .ppa-fdtd-ball {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ppa-fdtd-ball-img {
+    width: 58%;
+    height: 58%;
   }
 }

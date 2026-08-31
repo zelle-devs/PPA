@@ -484,7 +484,7 @@
   }
   
   .ppa-hero-title {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-special);
     text-align: center;
     margin: 0 auto;
   }
@@ -536,17 +536,17 @@
   }
   
   .ppa-hero-eyebrow {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     letter-spacing: 2px;
   }
   
   .ppa-hero-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-special);
     margin-bottom: 12px;
   }
   
   .ppa-hero-subtitle {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     margin-bottom: 20px;
     line-height: 1.5;
     color: #1D1D1D;
@@ -610,7 +610,7 @@
 /* Ultra Small (300px - 350px) */
 @media (max-width: 350px) {
   .ppa-hero-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-special);
   }
   
   .ppa-hero-video-box {

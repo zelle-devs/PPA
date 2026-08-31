@@ -66,7 +66,15 @@ const marqueeItems = [
     const stage = stageRef.current
     if (!stage || !isVisible) return
 
-    const getBallSize = () => 120
+    const getBallSize = () => {
+  if (typeof window === 'undefined') return 100
+
+  if (window.innerWidth <= 350) return 40
+  if (window.innerWidth <= 479) return 60
+  if (window.innerWidth <= 767) return 80
+
+  return 120
+}
 
     const initBalls = () => {
       const rect = stage.getBoundingClientRect()
