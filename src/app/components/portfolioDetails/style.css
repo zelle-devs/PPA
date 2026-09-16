@@ -1,0 +1,484 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.portfolio_section_hp {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 700px;
+
+    overflow: hidden;
+
+    background:var(--color-yellow-light);
+
+    color: #fff;
+}
+
+
+/* =========================================
+   HORIZONTAL TRACK
+========================================= */
+
+.portfolio_track {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5vw;
+
+    width: max-content;
+
+    height: 100%;
+
+    padding:
+        0 5vw;
+
+    box-sizing: border-box;
+
+    will-change: transform;
+}
+
+
+/* =========================================
+   INTRO PANEL
+========================================= */
+
+.portfolio_intro {
+
+    flex: 0 0 42vw;
+
+    width: 42vw;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+}
+
+
+.pshp_intro_content {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    will-change: transform;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.portfolio_eyebrow {
+
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================
+   FIRST HEADING
+========================================= */
+
+.section_heading_01 {
+
+    margin: 0 0 30px;
+
+    font-size:
+        clamp(
+            55px,
+            6.5vw,
+            110px
+        );
+
+    line-height: 0.85;
+
+    letter-spacing: -0.065em;
+
+    font-weight: 600;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   SECOND HEADING
+========================================= */
+
+.section_heading_02 {
+
+    max-width: 600px;
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            30px,
+            3.5vw,
+            60px
+        );
+
+    line-height: 0.94;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 400;
+
+    color:
+        var(--color-white);
+}
+
+
+/* =========================================
+   PORTFOLIO CARD
+========================================= */
+
+.portfolio_card {
+
+    position: relative;
+
+    flex: 0 0 20vw;
+
+    width: 20vw;
+
+    height: 68vh;
+
+    min-height: 480px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    background:
+        #202020;
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+    transform:
+        translateZ(0);
+}
+
+
+/* =========================================
+   CARD IMAGE
+========================================= */
+
+.portfolio_card_media {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+.portfolio_card_image {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transform:
+        scale(1.12);
+
+    will-change: transform;
+
+    transition:
+        transform 0.8s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.portfolio_card:hover
+.portfolio_card_image {
+
+    transform:
+        scale(1.04);
+}
+
+
+/* =========================================
+   CARD OVERLAY
+========================================= */
+
+.portfolio_card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(
+                0,
+                0,
+                0,
+                0.6
+            )
+        );
+}
+
+
+/* =========================================
+   CARD INFORMATION
+========================================= */
+
+.portfolio_card_info {
+
+    position: absolute;
+
+    left: 22px;
+
+    right: 22px;
+
+    bottom: 20px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+
+    color: #fff;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================
+   END PANEL
+========================================= */
+
+.portfolio_end {
+
+    flex: 0 0 22vw;
+
+    width: 22vw;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.portfolio_work_button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 45px;
+
+    padding:
+        17px 22px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 9px;
+
+    letter-spacing: 0.16em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+
+.portfolio_work_button span {
+
+    font-size: 18px;
+
+    transition:
+        transform 0.4s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+
+.portfolio_work_button:hover {
+
+    background: #fff;
+
+    color: #111;
+}
+
+
+.portfolio_work_button:hover span {
+
+    transform:
+        translateX(7px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .portfolio_track {
+
+        gap: 4vw;
+
+        padding:
+            0 5vw;
+    }
+
+    .portfolio_intro {
+
+        flex-basis: 65vw;
+
+        width: 65vw;
+    }
+
+    .portfolio_card {
+
+        flex-basis: 65vw;
+
+        width: 65vw;
+
+        height: 65vh;
+    }
+
+    .portfolio_end {
+
+        flex-basis: 30vw;
+
+        width: 30vw;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .portfolio_section_hp {
+
+        min-height: 650px;
+    }
+
+    .portfolio_track {
+
+        gap: 6vw;
+
+        padding:
+            0 7vw;
+    }
+
+    .portfolio_intro {
+
+        flex-basis: 80vw;
+
+        width: 80vw;
+    }
+
+    .section_heading_01 {
+
+        font-size:
+            17vw;
+    }
+
+    .section_heading_02 {
+
+        font-size:
+            9vw;
+    }
+
+    .portfolio_card {
+
+        flex-basis: 80vw;
+
+        width: 80vw;
+
+        height: 65vh;
+
+        min-height: 420px;
+    }
+
+    .portfolio_end {
+
+        flex-basis: 80vw;
+
+        width: 80vw;
+    }
+}

@@ -1,0 +1,639 @@
+/* =========================================================
+   HOMEPAGE SECOND SECTION
+========================================================= */
+
+.hompage_second_section {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    min-height: 700px;
+
+    overflow: hidden;
+
+    background: #f1eee7;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.left_side_section {
+    position: absolute;
+
+    left: 7vw;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 42%;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   SMALL LINE
+========================================================= */
+
+.section_line {
+    width: 70px;
+
+    height: 1px;
+
+    margin-bottom: 25px;
+
+    background: #111;
+
+    transform-origin: left;
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+========================================================= */
+
+.section_number {
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.section_heading {
+    margin: 0;
+
+    max-width: 700px;
+
+    font-size: clamp(
+        55px,
+        6vw,
+        105px
+    );
+
+    line-height: 0.88;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 600;
+
+    /* =====================================================
+       FLUID COLOR
+    ===================================================== */
+
+    background: linear-gradient(
+        90deg,
+
+        #B86F52 0%,
+        #B86F52 20%,
+
+        #718477 40%,
+        #8A7C91 60%,
+
+        #B86F52 80%,
+        #718477 100%
+    );
+
+    background-size: 300% 100%;
+
+    background-position: 0% center;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+
+    will-change: transform, opacity, background-position;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.right_side_slide {
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 48%;
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.right_slide_track {
+    position: relative;
+
+    width: 100%;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   EACH SLIDE
+========================================================= */
+
+.hss_slide {
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 700px;
+
+    padding:
+        20vh
+        8vw
+        10vh
+        3vw;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    transition:
+        opacity 0.5s ease;
+}
+
+
+/* =========================================================
+   SLIDE NUMBER
+========================================================= */
+
+.slide_number {
+    position: absolute;
+
+    top: 15%;
+
+    left: 3vw;
+
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.slide_content {
+    max-width: 580px;
+}
+
+
+/* =========================================================
+   MAIN PARAGRAPHS
+========================================================= */
+
+.section_description_1,
+.section_description_2 {
+    margin: 0 0 30px;
+
+    max-width: 520px;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: rgba(17, 17, 17, 0.65);
+}
+
+
+/* =========================================================
+   LARGE PARAGRAPH
+========================================================= */
+
+.section_description_1.large,
+.section_description_2.large {
+    margin-bottom: 35px;
+
+    font-size: clamp(
+        25px,
+        2.3vw,
+        40px
+    );
+
+    line-height: 1.1;
+
+    letter-spacing: -0.025em;
+
+    color: #111;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SLIDE LABEL
+========================================================= */
+
+.slide_label {
+    position: absolute;
+
+    bottom: 12%;
+
+    left: 3vw;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.hss_progress {
+    position: absolute;
+
+    right: 4vw;
+
+    bottom: 40px;
+
+    z-index: 20;
+
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+
+    font-size: 9px;
+
+    letter-spacing: 0.1em;
+}
+
+
+.hss_progress_active {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESKTOP ACTIVE / INACTIVE
+========================================================= */
+
+.hss_slide:not(.is-active) {
+    opacity: 0.55;
+}
+
+
+.hss_slide.is-active {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .left_side_section {
+        left: 5vw;
+
+        width: 45%;
+    }
+
+
+    .right_side_slide {
+        width: 50%;
+    }
+
+
+    .section_heading {
+        font-size: clamp(
+            35px,
+            6vw,
+            75px
+        );
+    }
+
+
+    .section_description_1.large,
+    .section_description_2.large {
+        font-size: 26px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   SIMPLE / NORMAL SCROLLING
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       MAIN SECTION
+    ===================================================== */
+
+    .hompage_second_section {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: auto;
+
+        overflow: hidden;
+
+        background: #f1eee7;
+    }
+
+
+    /* =====================================================
+       LEFT SIDE / HEADING
+    ===================================================== */
+
+    .left_side_section {
+        position: relative;
+
+        top: auto;
+
+        left: auto;
+
+        transform: none;
+
+        width: 88%;
+
+        margin: 0 auto;
+
+        padding:30px 0;
+
+        z-index: 2;
+    }
+
+
+    /* =====================================================
+       MOBILE LINE
+    ===================================================== */
+
+    .section_line {
+        width: 45px;
+
+        height: 1px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* =====================================================
+       MOBILE NUMBER
+    ===================================================== */
+
+    .section_number {
+        margin-bottom: 25px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.18em;
+    }
+
+
+    /* =====================================================
+       MOBILE HEADING
+    ===================================================== */
+
+    .section_heading {
+        max-width: 100%;
+
+        font-size: 9.5vw;
+
+        line-height: 0.99;
+
+        letter-spacing: -0.055em;
+
+        font-weight: 600;
+
+        background-size: 300% 100%;
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+
+        color: transparent;
+    }
+
+
+    /* =====================================================
+       RIGHT SIDE
+    ===================================================== */
+
+    .right_side_slide {
+        position: relative;
+
+        top: auto;
+
+        right: auto;
+
+        width: 100%;
+
+        height: auto;
+
+        overflow: visible;
+    }
+
+
+    /* =====================================================
+       TRACK
+    ===================================================== */
+
+    .right_slide_track {
+        position: relative;
+
+        width: 100%;
+
+        transform: none !important;
+
+        will-change: auto;
+    }
+
+
+    /* =====================================================
+       MOBILE SLIDES
+    ===================================================== */
+
+    .hss_slide {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: auto;
+
+        padding:30px;
+
+        display: block;
+
+        box-sizing: border-box;
+
+        border-top:
+            1px solid
+            rgba(17, 17, 17, 0.12);
+
+        /* No desktop active/inactive effect */
+        opacity: 1 !important;
+
+        transition: none;
+    }
+
+
+    /* =====================================================
+       MOBILE SLIDE NUMBER
+    ===================================================== */
+
+    .slide_number {
+        position: relative;
+
+        top: auto;
+
+        left: auto;
+
+        display: block;
+
+        margin-bottom: 42px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.18em;
+
+        opacity: 0.45;
+    }
+
+
+    /* =====================================================
+       MOBILE CONTENT
+    ===================================================== */
+
+    .slide_content {
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       MOBILE LARGE TEXT
+    ===================================================== */
+
+    .section_description_1.large,
+    .section_description_2.large {
+        margin:
+            0
+            0
+            24px;
+
+        max-width: 100%;
+
+        font-size: 27px;
+
+        line-height: 1.12;
+
+        letter-spacing: -0.025em;
+
+        font-weight: 500;
+
+        color: #111;
+    }
+
+
+    /* =====================================================
+       MOBILE NORMAL TEXT
+    ===================================================== */
+
+    .section_description_1,
+    .section_description_2 {
+        margin: 0;
+
+        max-width: 100%;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        color: rgba(
+            17,
+            17,
+            17,
+            0.62
+        );
+    }
+
+
+    /* =====================================================
+       MOBILE LABEL
+    ===================================================== */
+
+    .slide_label {
+        position: relative;
+
+        left: auto;
+
+        bottom: auto;
+
+        display: block;
+
+        margin-top: 50px;
+
+        font-size: 9px;
+
+        font-weight: 600;
+
+        letter-spacing: 0.18em;
+
+        opacity: 0.4;
+    }
+
+
+    /* =====================================================
+       HIDE PROGRESS
+    ===================================================== */
+
+    .hss_progress {
+        display: none;
+    }
+
+}

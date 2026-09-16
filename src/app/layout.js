@@ -1,15 +1,25 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {Inter, Sora, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "./components/smoothScroll";
+import Navbar from "./components/Navbar/navbar";
+import Footer from "./components/Footer/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sora = Sora({
+  variable: "--font-primary",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-secondary",
   subsets: ["latin"],
 });
+
+
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto",
+  subsets: ['latin'],
+  weight: ['700', '800', '900'],
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -18,8 +28,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${inter.variable} ${sora.variable} ${robotoCondensed.variable}`}>
+      <body>
+        <SmoothScroll>
+          <Navbar/>
+          {children}
+          <Footer/>
+        </SmoothScroll>
+      </body>
     </html>
   );
 }

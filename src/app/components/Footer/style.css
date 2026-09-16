@@ -1,0 +1,495 @@
+/* =========================================
+   FOOTER
+========================================= */
+
+.site_footer {
+  position: relative;
+  width: 100%;
+  padding: 3.5vw 3.5vw 3.5vw;
+  background: var(--color-yellow-light);
+  color: #171717;
+  overflow: hidden;
+}
+
+/* =========================================
+   MAIN PANEL
+========================================= */
+
+.footer_inner {
+  position: relative;
+  width: 100%;
+  padding: 8vh 4vw 0vh 4vw;
+  box-sizing: border-box;
+  border-radius: 42px 42px 0 0;
+  background: #f1efe6;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 8vw;
+  row-gap: 0;
+  overflow: hidden;
+}
+
+/* =========================================
+   STATEMENT (Desktop: Top-Right Grid Slot)
+========================================= */
+
+.footer_statement {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 700px;
+  will-change: transform, opacity;
+}
+
+.footer_statement h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 64px);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+  font-weight: 400;
+  color: rgba(23, 23, 23, 0.58);
+}
+
+/* =========================================
+   LEFT BRAND (Desktop: Column 1)
+========================================= */
+
+.footer_brand {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  will-change: transform;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.footer_logo {
+  display: block;
+  width: fit-content;
+  margin: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.footer_logo img {
+  display: block;
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================
+   ADDRESS
+========================================= */
+
+.footer_address {
+  margin-top: 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(23, 23, 23, 0.58);
+}
+
+.footer_address p {
+  margin: 0;
+}
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+.footer_newsletter {
+  width: 100%;
+  max-width: 470px;
+  margin-top: 9vh;
+}
+
+.footer_newsletter h2 {
+  margin: 0 0 20px;
+  font-size: clamp(45px, 5vw, 78px);
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+  will-change: transform, opacity;
+  color: var(--color-yellow-light);
+}
+
+/* =========================================
+   NEWSLETTER FORM
+========================================= */
+
+.newsletter_form {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 54px;
+  border-radius: 40px;
+  overflow: hidden;
+  background: #fff;
+  will-change: transform, opacity;
+}
+
+.newsletter_form input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 0 20px;
+  background: transparent;
+  color: #171717;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.newsletter_form input::placeholder {
+  color: rgba(23, 23, 23, 0.5);
+}
+
+.newsletter_form button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  margin: 3px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 30px;
+  background: var(--color-blue-dark);
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.newsletter_form button span {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.newsletter_form button:hover {
+  transform: scale(0.97);
+}
+
+/* =========================================
+   AGREEMENT
+========================================= */
+
+.newsletter_agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: rgba(23, 23, 23, 0.6);
+  will-change: transform, opacity;
+}
+
+.newsletter_agreement > span {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.newsletter_agreement p {
+  margin: 0;
+}
+
+.newsletter_agreement a {
+  color: #171717;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================================
+   RIGHT (Desktop: Column 2 below Statement)
+========================================= */
+
+.footer_right {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 3px;
+  will-change: transform;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.footer_contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 45px;
+}
+
+.footer_phone {
+  margin-bottom: 18px;
+  color: rgba(23, 23, 23, 0.65);
+  text-decoration: none;
+  font-size: 13px;
+  will-change: transform, opacity;
+}
+
+.footer_email {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #171717;
+  text-decoration: none;
+  font-size: clamp(22px, 2vw, 30px);
+  letter-spacing: -0.04em;
+  will-change: transform, opacity;
+}
+
+.email_icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-blue-dark);
+  color: #fff;
+  font-size: 15px;
+  transition: transform 0.4s ease;
+}
+
+.footer_email:hover .email_icon {
+  transform: rotate(12deg) scale(1.08);
+}
+
+/* =========================================
+   SOCIALS
+========================================= */
+
+.social_links {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.social_links a {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #171717;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  will-change: transform;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.footer_navigation {
+  grid-column: 1 / -1;
+  align-self: end;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.footer_navigation nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer_navigation nav a {
+  position: relative;
+  color: #171717;
+  text-decoration: none;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  will-change: transform, opacity;
+}
+
+.footer_navigation nav a::before {
+  content: "•";
+  display: inline-block;
+  margin-right: 8px;
+  transform: translateY(-2px);
+  font-size: 14px;
+}
+
+/* =========================================
+   WORDMARK IMAGE
+========================================= */
+
+.wordMark_img {
+  grid-column: 1 / -1;
+  display: block;
+  width: 60%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 6vh;
+  align-self: end;
+  justify-self: start;
+  transform-origin: left bottom;
+  will-change: transform;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .site_footer {
+    padding: 0 2vw 2vw;
+  }
+
+  .footer_inner {
+    padding: 7vh 5vw 0vh 5vw;
+    border-radius: 32px 32px 0 0;
+    column-gap: 5vw;
+  }
+
+  .footer_logo img {
+    width: 210px;
+  }
+
+  .footer_newsletter {
+    margin-top: 7vh;
+  }
+
+  .footer_statement h2 {
+    font-size: clamp(28px, 4.5vw, 50px);
+  }
+
+  .footer_navigation nav {
+    gap: 6px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .site_footer {
+    padding: 0;
+    background: var(--color-blue-dark);
+  }
+
+  .footer_inner {
+    min-height: auto;
+    padding: 7vw;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* 1. ONLY the Statement text goes to the very top */
+  .footer_statement {
+    order: 1;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .footer_statement h2 {
+    font-size: 10vw;
+    line-height: 0.95;
+  }
+
+  /* 2. Logo, address & newsletter */
+  .footer_brand {
+    order: 2;
+    margin-top: 25x;
+  }
+
+  .footer_logo img {
+    width: 190px;
+  }
+
+  .footer_address {
+    margin-top: 20px;
+  }
+
+  .footer_newsletter {
+    margin-top: 35px;
+    max-width: 100%;
+  }
+
+  /* Keep "Stay in the loop." in a single line */
+  .footer_newsletter h2 {
+    margin-bottom: 15px;
+    font-size: clamp(26px, 7vw, 42px);
+    white-space: nowrap;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .newsletter_form {
+    height: 52px;
+  }
+
+  .newsletter_form button {
+    gap: 15px;
+    padding: 0 15px;
+    font-size: 10px;
+  }
+
+  /* 3. Phone, email & socials remain below brand/newsletter */
+  .footer_right {
+    order: 3;
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  .footer_contact {
+    margin-top: 35px;
+  }
+
+  .footer_email {
+    font-size: 6vw;
+  }
+
+  /* 4. Navigation links */
+  .footer_navigation {
+    order: 4;
+    margin-top: 40px;
+    margin-bottom: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .footer_navigation nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer_navigation nav a {
+    font-size: 7.5vw;
+  }
+
+  /* 5. Wordmark image at the very bottom */
+  .wordMark_img {
+    order: 5;
+    width: 85%;
+    margin-top: 40px;
+  }
+}

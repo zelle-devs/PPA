@@ -1,0 +1,251 @@
+/* Container holds the viewport lock for smooth GSAP pinning */
+.services_container_section {
+  width: 100%;
+  height: 100vh;
+  padding: 30px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #f7f8f6;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wrapper holds all stacked slides directly on top of each other */
+.services_stack_wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  height: calc(100vh - 60px);
+  max-height: 820px;
+  overflow: hidden; /* Zaroori: taake koi bhi slide boundary se bahar leak na ho */
+  border-radius: 28px;
+}
+
+/* Individual Slide / Card Canvas */
+.service_container_section_slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+  background: #f7f8f6;
+  border-radius: 28px;
+  box-sizing: border-box;
+  transform-origin: center top;
+  will-change: transform, opacity, filter;
+  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* Left Card */
+.service_content_card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #eceee9;
+  box-sizing: border-box;
+}
+
+.service_card_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.service_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f4f6f2;
+  color: #2b332b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #e5e9e0;
+}
+
+.badge_icon {
+  font-size: 11px;
+}
+
+.slide_number {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.service_title {
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.15;
+  font-weight: 700;
+  color: #111412;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px 0;
+}
+
+.service_description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #646b63;
+  margin: 0 0 24px 0;
+  max-width: 480px;
+}
+
+.service_offerings_block {
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.offerings_label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.offerings_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: #f7f8f6;
+  color: #3b423a;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid #e7ebe4;
+}
+
+.service_cta_btn {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 999px;
+  background: #54b689;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.service_cta_btn:hover {
+  background: #46a177;
+  transform: translateY(-1px);
+}
+
+/* Right Media Card */
+.service_media_card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  background: #e5e9e0;
+}
+
+.service_media_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floating Glassmorphic Card */
+.floating_glass_card {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.glass_stars {
+  color: #34d399;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.glass_quote {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+}
+
+.glass_author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author_avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  display: inline-block;
+}
+
+.author_info strong {
+  display: block;
+  font-size: 12px;
+  color: #1a1a1a;
+}
+
+.author_info small {
+  display: block;
+  font-size: 11px;
+  color: #555e55;
+}
+
+/* Responsive Styles */
+@media (max-width: 960px) {
+  .services_container_section {
+    height: auto;
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+
+  .services_stack_wrapper {
+    height: auto;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .service_container_section_slide {
+    position: relative;
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .service_media_card {
+    min-height: 360px;
+  }
+}

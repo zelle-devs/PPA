@@ -1,0 +1,432 @@
+/* =========================================================
+   HERO (LIGHT THEME)
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  background: var(--color-white, #ffffff);
+  color: var(--color-black, #000000);
+}
+
+/* =========================================================
+   IMAGE & OVERLAYS
+========================================================= */
+
+.hero-image {
+  position: absolute;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
+  overflow: hidden;
+  z-index: 0;
+  will-change: transform, clip-path;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+/* Crisp light gradient mask so text stays sharp over the photo */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.92) 38%,
+    rgba(255, 255, 255, 0.6) 72%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: 
+    linear-gradient(var(--color-black-light, #1d1d1d) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-black-light, #1d1d1d) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* =========================================================
+   CONTAINER & CONTENT
+========================================================= */
+
+.hero-container {
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  max-width: 1500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Eyebrow */
+.hero-eyebrow-mask {
+  position: absolute;
+  top: 18%;
+  left: 0;
+  overflow: hidden;
+}
+
+.hero-eyebrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-blue-dark, #0065a8);
+}
+
+
+
+/* Heading */
+.hero-heading {
+  position: absolute;
+  left: 0;
+  top: 25%;
+  width: 75%;
+  will-change: transform;
+}
+
+.hero-line-mask,
+.hero-real-mask {
+  position: relative;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+.hero-line-inner {
+  font-family: var(--font-primary);
+  color: var(--color-black-light, #1d1d1d);
+  font-size: clamp(55px, 5vw, 125px);
+  line-height: 0.88;
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  will-change: transform;
+}
+
+.hero-real {
+  margin-top: 25px;
+  will-change: transform;
+}
+
+.hero-real-inner {
+  font-size: clamp(65px, 7.2vw, 150px);
+  line-height: 0.82;
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  color: var(--color-magenta-main, #c62f60);
+  font-family: var(--font-secondary);
+  will-change: transform;
+}
+
+/* =========================================================
+   BOTTOM SECTION
+========================================================= */
+
+.hero-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 12%;
+  width: 75%;
+  will-change: transform, opacity;
+}
+
+.hero-description {
+  width: 390px;
+  margin: 0 0 25px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-black-dark, #3d3d3d);
+}
+
+.hero-services {
+  display: flex;
+  gap: 0;
+  margin-bottom: 35px;
+}
+
+.hero-services span {
+  padding: 0 18px;
+  border-right: 1px solid var(--color-gray-lighter, #d9d9d9);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-gray-dark, #777777);
+}
+
+.hero-services span:first-child {
+  padding-left: 0;
+}
+
+.hero-services span:last-child {
+  border-right: none;
+}
+
+.hero-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  border-top: 1px solid var(--color-gray-lighter, #d9d9d9);
+  padding-top: 20px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-width: 190px;
+  padding: 16px 18px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-button span {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.hero-button:hover span {
+  transform: translateX(5px);
+}
+
+/* Primary Button (Dark on Light) */
+.hero-button-primary {
+  color: var(--color-white, #ffffff);
+  background: var(--color-black-light, #1d1d1d);
+}
+
+.hero-button-primary:hover {
+  background: var(--color-blue-dark, #0065a8);
+  color: var(--color-white, #ffffff);
+}
+
+/* Secondary Button (Bordered Light) */
+.hero-button-secondary {
+  color: var(--color-black-light, #1d1d1d);
+  background: transparent;
+  border: 1px solid var(--color-gray-light, #bbbbbb);
+}
+
+.hero-button-secondary:hover {
+  background: var(--color-gray-lighter, #d9d9d9);
+  border-color: var(--color-black-light, #1d1d1d);
+}
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.hero-scroll {
+  position: absolute;
+  right: 3%;
+  bottom: 7%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-scroll span {
+  writing-mode: vertical-rl;
+  font-size: 8px;
+  letter-spacing: 0.25em;
+  color: var(--color-gray-dark, #777777);
+}
+
+.hero-scroll div {
+  width: 1px;
+  height: 55px;
+  background: var(--color-gray-light, #bbbbbb);
+}
+
+/* =========================================================
+   NEXT SECTION
+========================================================= */
+
+.next-section {
+  position: relative;
+  min-height: 100vh;
+  background: var(--color-gray-lighter, #d9d9d9);
+  color: var(--color-black, #000000);
+  display: flex;
+  align-items: center;
+  padding: 10vw 5vw;
+}
+
+.next-section-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.next-section-inner span {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--color-blue-dark, #0065a8);
+}
+
+.next-section h2 {
+  margin: 0;
+  font-size: clamp(60px, 11vw, 180px);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  font-weight: 600;
+  color: var(--color-black-light, #1d1d1d);
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+========================================================= */
+
+@media (max-width: 1000px) {
+  .hero-heading,
+  .hero-bottom {
+    width: 90%;
+  }
+
+  .hero-image {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.9) 55%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 750px;
+  }
+
+  .hero-container {
+    width: 88%;
+  }
+
+  .hero-eyebrow-mask {
+    top: 18%;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.13em;
+  }
+
+  .hero-eyebrow::before {
+    width: 30px;
+  }
+
+  .hero-heading {
+    top: 22%;
+    width: 100%;
+  }
+
+  .hero-line-inner {
+    font-size: 11.5vw;
+    line-height: 0.9;
+  }
+
+  .hero-real {
+    margin-top: 20px;
+  }
+
+  .hero-real-inner {
+    font-size: 15vw;
+    line-height: 0.84;
+  }
+
+  .hero-bottom {
+    width: 100%;
+    bottom: 20%;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: 330px;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .hero-services {
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 20px;
+  }
+
+  .hero-services span {
+    padding: 0 10px;
+    font-size: 7px;
+  }
+
+  .hero-services span:first-child {
+    padding-left: 0;
+  }
+
+  .hero-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .hero-buttons {
+    width: 100%;
+  }
+
+  .hero-button {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 12px;
+    gap: 10px;
+    font-size: 7px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .next-section {
+    min-height: 80vh;
+    padding: 20vw 7vw;
+  }
+}

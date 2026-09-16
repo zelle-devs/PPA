@@ -1,0 +1,49 @@
+.inkSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  width: 100%;
+  background-color: #000000;
+  overflow: hidden;
+  cursor: none;
+  user-select: none;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.canvasLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  /* High contrast organic blur ko sharp ink drop mein convert karta hai */
+  filter: contrast(35) brightness(1);
+}
+
+.contentLayer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.heading {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.subheading {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
