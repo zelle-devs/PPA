@@ -5,6 +5,12 @@ import ScrollFrameSequence from "../components/cupAnimation/cupAnimation";
 import Hero from "../components/heroSection/hero";
 import ServicesContainerSection from "../components/servicesContainerSection/servicesContainerSection";
 
+export const metadata = {
+  title: "Printing, Packaging & Advertising Services",
+  description:
+    "Explore PPA's printing, packaging and advertising services, from commercial print and custom packaging to signage, displays and outdoor advertising.",
+};
+
 const heroData = {
     image: "/images/about.png",
 
@@ -27,17 +33,11 @@ const heroData = {
     buttons: [
         {
             label: "START A PROJECT",
-            href: "#contact",
+            href: "consultation",
             icon: "→",
             variant: "primary",
         },
 
-        {
-            label: "SEE WHAT WE MAKE",
-            href: "#work",
-            icon: "↗",
-            variant: "secondary",
-        },
     ],
 
     scrollText: "SCROLL",

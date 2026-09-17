@@ -25,14 +25,14 @@ const heroData = {
   buttons: [
     {
       label: "START A PROJECT",
-      href: "#contact",
+      href: "consultation",
       icon: "→",
       variant: "primary",
     },
 
     {
       label: "SEE WHAT WE MAKE",
-      href: "#work",
+      href: "portfolio",
       icon: "↗",
       variant: "secondary",
     },
@@ -41,6 +41,12 @@ const heroData = {
   scrollText: "SCROLL",
 
   showScroll: true,
+};
+
+export const metadata = {
+  title: "About Print, Pack & Advertising",
+  description:
+    "Learn about Print, Pack & Advertising, a production partner helping businesses bring their brands to life through printing, packaging and advertising.",
 };
 
 export default function Home() {

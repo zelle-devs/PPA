@@ -420,7 +420,7 @@
   }
 
   .footer_logo img {
-    width: 190px;
+    display: none;
   }
 
   .footer_address {
@@ -465,7 +465,7 @@
   }
 
   .footer_email {
-    font-size: 6vw;
+    font-size: 4vw;
   }
 
   /* 4. Navigation links */
@@ -491,5 +491,91 @@
     order: 5;
     width: 85%;
     margin-top: 40px;
+  }
+}
+
+.cc_details {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+ 
+}
+
+.cc_details_dev{
+  
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 10px 0px 0 0;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  
+  
+}
+
+.cc_details_dev a{
+  padding-left: 5px;
+}
+
+.cc_details_dev img{
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;  
+}
+
+.general_cc_details{
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color:#000;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  /* Prevent cutting off the copyright text */
+  .site_footer {
+    overflow: visible;
+  }
+
+  /* Reset positioning so it flows naturally */
+  .cc_details {
+    position: static;
+    transform: none;
+    left: auto;
+    bottom: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 24px 20px 20px;
+    box-sizing: border-box;
+  }
+
+  /* Make sure copyright & 'All Rights Reserved' is visible, centered, and white */
+  .general_cc_details {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #ffffff; /* Overrides dark text on dark background */
+    opacity: 0.85;
+  }
+
+  /* Center the developer badge */
+  .cc_details_dev {
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 11px;
+    align-self: center;
   }
 }

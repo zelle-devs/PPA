@@ -34,14 +34,14 @@ const heroData = {
   buttons: [
     {
       label: "START A PROJECT",
-      href: "#contact",
+      href: "consultation",
       icon: "→",
       variant: "primary",
     },
 
     {
       label: "SEE WHAT WE MAKE",
-      href: "#work",
+      href: "portfolio",
       icon: "↗",
       variant: "secondary",
     },

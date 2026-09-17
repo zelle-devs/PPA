@@ -4,6 +4,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./style.css";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -353,16 +354,13 @@ export default function Footer() {
               +92 300 1234567
             </a>
 
-            <a href="mailto:hello@ppa.com" className="footer_email">
+            <a href="mailto:info@printpackadvertising.com" className="footer_email">
               <span className="email_icon">↗</span>
-              hello@ppa.com
+              info@printpackadvertising.com
             </a>
 
             <div className="social_links">
-              <a href="#">X</a>
               <a href="#">in</a>
-              <a href="#">ig</a>
-              <a href="#">f</a>
             </div>
           </div>
         </div>
@@ -387,6 +385,19 @@ export default function Footer() {
           src="/wordmark2.png"
           alt="Brand Wordmark"
         />
+      </div>
+      <div className="cc_details">
+        <div className="general_cc_details">
+            © 2026 Print Pack Advertising. All Rights Reserved.
+        </div>
+        <div className="cc_details_dev">
+          <img src="/zelle.png" alt="" srcset="" />
+          Designed & Managed by <a href="https://zellesolutions.com" target="blank"> Zelle Solutions Pvt. Ltd</a>
+        </div>
+         {/* <div className="general_cc_details">
+            <Link href={"#"}>Terms & Conditions</Link>
+             <Link href={"#"}>Privacy Policy</Link>
+        </div> */}
       </div>
     </footer>
   );

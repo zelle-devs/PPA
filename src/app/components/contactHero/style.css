@@ -1,0 +1,156 @@
+.contact_hero {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #faf9f7;
+  color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 160px 8% 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* =========================================================
+   TOP SECTION: HEADINGS & MASKS
+========================================================= */
+
+.contact_hero_top {
+  max-width: 1000px;
+}
+
+.hero_heading_mask {
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.main_hero_heading {
+  font-size: clamp(55px, 5vw, 125px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0;
+  color: #191919;
+  display: inline-block;
+  will-change: transform;
+}
+
+.hero_subheading_mask {
+  overflow: hidden;
+}
+
+.hero_subheading {
+  font-size: clamp(1.4rem, 1.5vw, 2.1rem);
+  line-height: 1.35;
+  font-weight: 500;
+  color: #555555;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 620px;
+  will-change: transform, opacity;
+  font-family: var(--font-secondary);
+}
+
+/* =========================================================
+   BOTTOM SECTION: CONTACT DETAILS
+========================================================= */
+
+.contact_hero_bottom {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: flex-end;
+  gap: 40px;
+  width: 100%;
+}
+
+.contact_info_block {
+  display: flex;
+  flex-direction: column;
+  will-change: transform, opacity;
+}
+
+/* Phone & Email Section */
+.phone_number {
+  font-size: 15px;
+  font-weight: 500;
+  color: #666666;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
+.phone_number:hover {
+  color: #191919;
+}
+
+.email_badge_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.copy_icon_btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-blue-dark);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.copy_icon_btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.email_link {
+  font-size: clamp(1.5rem, 2vw, 1.85rem);
+  font-weight: 600;
+  color: #191919;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.email_link:hover {
+  text-decoration: underline;
+}
+
+/* Address & Hours Columns */
+.info_label {
+  font-size: 14px;
+  color: #666666;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.info_text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #191919;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .contact_hero {
+    padding: 60px 6% 40px;
+    height: auto;
+    min-height: 100vh;
+    gap: 60px;
+  }
+
+  .contact_hero_bottom {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

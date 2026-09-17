@@ -557,3 +557,30 @@ select {
   bottom: 0;
   z-index: 1;
 }
+
+
+/* ********* consulation form******* */
+.section-padding {
+  padding-top: var(--section-gap);
+  /* padding-bottom: var(--section-gap); */
+}
+@media (min-width: 1921px) {
+  :root {
+    --section-gap: 130px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --section-gap: 110px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --section-gap: 100px;
+  }
+}
+@media (min-width: 480px) {
+  :root {
+    --section-gap: 90px;
+  }
+}
