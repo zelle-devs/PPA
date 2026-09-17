@@ -15,7 +15,7 @@ const heroData = {
     image: "/images/about.png",
 
     imageAlt:
-        "Print, packaging and advertising production",
+        "Services",
 
     eyebrow:
         "SERVICES PRINT, PACK & ADVERTISING",

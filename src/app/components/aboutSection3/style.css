@@ -17,7 +17,7 @@
 .header_group {
   text-align: center;
   z-index: 10;
-  margin-top: 10px;
+  margin-top: 5%;
 }
 
 .main_section_heading_02 {
@@ -159,5 +159,11 @@
     font-size: 13px;
     line-height: 1.4;
     padding: 0 12px;
+  }
+  .header_group{
+    margin-top: 15%;
+  }
+  .bottom_heading{
+    margin: 0 0 40px;
   }
 }

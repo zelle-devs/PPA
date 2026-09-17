@@ -11,19 +11,19 @@ const CARDS_DATA = [
   {
     id: "print",
     title: "PRINT.",
-    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/about/print.png",
     className: "card_row_1",
   },
   {
     id: "pack",
     title: "PACK.",
-    image: "https://images.unsplash.com/photo-1530587191325-3db32d826c18?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/about/pack.png",
     className: "card_row_1",
   },
   {
     id: "advertise",
     title: "ADVERTISE.",
-    image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/about/adv.png",
     className: "card_row_2",
   },
 ];

@@ -75,8 +75,8 @@ export default function ContactHero() {
             {/* Bottom Information Row */}
             <div className="contact_hero_bottom">
                 <div className="contact_info_block contact_primary">
-                    <a href="tel:5108956500" className="phone_number">
-                        (510) 895-6500
+                    <a href="tel:923105317868" className="phone_number">
+                        +92 310 5317868
                     </a>
                     <div className="email_badge_wrapper">
                         <button
@@ -123,17 +123,15 @@ export default function ContactHero() {
                 <div className="contact_info_block">
                     <span className="info_label">Address</span>
                     <p className="info_text">
-                        Karachi, Sindh
+                        House # C-66, Karimabad, Block 4, Federal B Area,
                         <br />
-                        Pakistan.          </p>
+                        Karachi ,Pakistan          </p>
                 </div>
 
                 <div className="contact_info_block">
-                    <span className="info_label">Office Hours</span>
+                    <span className="info_label">Postal Code</span>
                     <p className="info_text">
-                        Monday to Saturday:
-                        <br />
-                        9:00 AM – 6:00 PM
+                         75950
                     </p>
                 </div>
             </div>

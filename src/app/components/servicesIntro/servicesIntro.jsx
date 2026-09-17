@@ -332,8 +332,8 @@ export default function ServicesIntro() {
                 <div
                     className="section_heading_01"
                 >
-                    EVERYTHING YOUR BRAND NEEDS
-                    TO SHOW UP
+                    EVERYTHING YOUR BRAND NEEDS TO SHOW UP
+                    
                 </div>
 
 

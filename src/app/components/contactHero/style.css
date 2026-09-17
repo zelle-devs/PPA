@@ -57,7 +57,7 @@
 
 .contact_hero_bottom {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1.5fr 0.4fr;
   align-items: flex-end;
   gap: 40px;
   width: 100%;
@@ -110,8 +110,9 @@
 }
 
 .email_link {
-  font-size: clamp(1.5rem, 2vw, 1.85rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.85rem);
   font-weight: 600;
+
   color: #191919;
   text-decoration: none;
   letter-spacing: -0.02em;
@@ -143,14 +144,17 @@
 
 @media (max-width: 900px) {
   .contact_hero {
-    padding: 60px 6% 40px;
+    padding: 20% 6% 40px;
     height: auto;
     min-height: 100vh;
-    gap: 60px;
+    gap: 30px;
+    justify-content: flex-start;
   }
 
   .contact_hero_bottom {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  
 }

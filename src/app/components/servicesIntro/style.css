@@ -58,7 +58,7 @@
 
     width: 100%;
 
-    padding:20px;
+    padding:6% 20px 20px 20px;
 
     box-sizing: border-box;
 
@@ -75,7 +75,7 @@
 
 .section_heading_01 {
 
-    max-width: 900px;
+    max-width: 100%;
 
     margin: 0;
 
@@ -140,7 +140,7 @@
 
     overflow: hidden;
 
-    margin-top: 8vh;
+    margin-top: 2vh;
 
 }
 
@@ -564,7 +564,7 @@
 
     .section_heading_01 {
 
-        max-width: 95%;
+        max-width: 100%;
 
         font-size: 7vw !important;
 

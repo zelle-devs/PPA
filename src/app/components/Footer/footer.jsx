@@ -314,7 +314,7 @@ export default function Footer() {
 
           <div className="footer_address">
             <p>PRINT, PACK & ADVERTISING</p>
-            <p>Pakistan</p>
+            <p>House # C-66, Karimabad, Block 4, Federal B Area, Karachi ,Pakistan</p>
           </div>
 
           {/* NEWSLETTER */}
@@ -323,7 +323,7 @@ export default function Footer() {
               Stay in the <span className="hide-on-mobile"><br /></span>loop.
             </h2>
 
-            <form className="newsletter_form">
+            {/* <form className="newsletter_form">
               <input
                 type="email"
                 placeholder="Email"
@@ -341,7 +341,7 @@ export default function Footer() {
                 By subscribing, you agree to our{" "}
                 <a href="/privacy-policy">privacy policy.</a>
               </p>
-            </label>
+            </label> */}
           </div>
         </div>
 
@@ -350,8 +350,8 @@ export default function Footer() {
         ===================================== */}
         <div className="footer_right">
           <div className="footer_contact">
-            <a href="tel:+923001234567" className="footer_phone">
-              +92 300 1234567
+            <a href="tel:+923105317868 " className="footer_phone">
+              +92 310 5317868 
             </a>
 
             <a href="mailto:info@printpackadvertising.com" className="footer_email">

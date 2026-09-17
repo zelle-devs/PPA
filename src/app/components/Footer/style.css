@@ -389,7 +389,7 @@
 @media (max-width: 650px) {
   .site_footer {
     padding: 0;
-    background: var(--color-blue-dark);
+    /* background: var(--color-blue-dark); */
   }
 
   .footer_inner {

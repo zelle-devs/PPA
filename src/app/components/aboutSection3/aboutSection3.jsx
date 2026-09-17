@@ -10,28 +10,28 @@ gsap.registerPlugin(ScrollTrigger);
 const SLIDES_DATA = [
   {
     id: 1,
-    title: "01. The finish.",
-    img: "https://picsum.photos/500/700?random=1",
+    title: "01. The Finish",
+    img: "/images/about/step1.png",
   },
   {
     id: 2,
-    title: "02. The colour.",
-    img: "https://picsum.photos/500/700?random=2",
+    title: "02. The Color",
+    img: "/images/about/step2.png",
   },
   {
     id: 3,
     title: "03. The Cut",
-    img: "https://picsum.photos/500/700?random=3",
+    img: "/images/about/step3.png",
   },
   {
     id: 4,
     title: "04. The Material",
-    img: "https://picsum.photos/500/700?random=4",
+    img: "/images/about/step4.png",
   },
   {
     id: 5,
-    title: "05. The way it all comes together.",
-    img: "https://picsum.photos/500/700?random=5",
+    title: "05. Perfect Fit",
+    img: "/images/about/step5.png",
   },
 ];
 

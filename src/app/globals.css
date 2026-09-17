@@ -559,6 +559,14 @@ select {
 }
 
 
+.herosection_port_mob{
+  display: none;
+}
+
+.herosection_port_desk{
+  display: block;
+}
+
 /* ********* consulation form******* */
 .section-padding {
   padding-top: var(--section-gap);
@@ -578,9 +586,22 @@ select {
   :root {
     --section-gap: 100px;
   }
+
 }
 @media (min-width: 480px) {
   :root {
     --section-gap: 90px;
   }
 }
+
+
+@media (max-width: 700px) {
+  .herosection_port_mob{
+  display: block;
+}
+
+.herosection_port_desk{
+  display: none;
+}
+}
+

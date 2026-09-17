@@ -82,8 +82,8 @@
 
     font-size: clamp(
         50px,
-        5.8vw,
-        100px
+        5.4vw,
+        90px
     );
 
     line-height: 0.88;
@@ -170,7 +170,7 @@
     min-height: 700px;
 
     padding:
-        20vh
+        10vh
         8vw
         10vh
         3vw;
@@ -269,7 +269,7 @@
 
     left: 3vw;
 
-    font-size: 9px;
+    font-size: 15px;
 
     font-weight: 600;
 
