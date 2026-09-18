@@ -486,9 +486,9 @@
 
     .services_intro_header {
 
-        padding-top: 5vh;
+        padding-top: 6vh;
 
-        padding-left: 5vw;
+        padding-left: 0vw;
 
         padding-right: 5vw;
 
@@ -500,7 +500,7 @@
         font-size:
             clamp(
                 38px,
-                7vw,
+                6vw,
                 70px
             );
 
@@ -538,6 +538,16 @@
                 8vw,
                 80px
             );
+
+    }
+
+    .slide_si_content {
+
+        top: 7vw;
+
+        right: 7vw;
+
+        bottom: 7vh;
 
     }
 

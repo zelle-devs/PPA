@@ -220,8 +220,8 @@ export default function AdvService() {
 
       mm.add(
         {
-          isDesktop: "(min-width: 769px)",
-          isMobile: "(max-width: 768px)",
+          isDesktop: "(min-width: 1001px)",
+          isMobile: "(max-width: 1000px)",
         },
         (context) => {
           const { isMobile } = context.conditions;
@@ -279,7 +279,7 @@ export default function AdvService() {
       <div className="main_sign_board">
         <picture>
           <source
-            media="(max-width: 768px)"
+            media="(max-width: 1000px)"
             srcSet="/images/services/signboard_mob.png"
           />
           <img
@@ -293,7 +293,7 @@ export default function AdvService() {
       <div className="signboard_content_continer">
         <picture className="sign_board_rightImage">
           <source
-            media="(max-width: 768px)"
+            media="(max-width: 1000px)"
             srcSet="/images/services/model_2_a.png"
           />
           <img

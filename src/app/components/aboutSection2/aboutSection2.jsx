@@ -136,7 +136,7 @@ export default function AboutSection2() {
           </div>
 
           <h2 className="purpose_ast_main_heading">
-            MAKE YOUR BRAND SHOW UP.
+            MAKE YOUR BRAND SHOW UP
           </h2>
 
           <p className="details_para_ast">

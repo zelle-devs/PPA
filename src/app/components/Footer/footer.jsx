@@ -391,7 +391,7 @@ export default function Footer() {
             © 2026 Print Pack Advertising. All Rights Reserved.
         </div>
         <div className="cc_details_dev">
-          <img src="/zelle.png" alt="" srcset="" />
+          <img src="/zelle.png" alt="zelle" />
           Designed & Managed by <a href="https://zellesolutions.com" target="blank"> Zelle Solutions Pvt. Ltd</a>
         </div>
          {/* <div className="general_cc_details">

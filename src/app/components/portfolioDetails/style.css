@@ -423,6 +423,10 @@
 
         width: 30vw;
     }
+
+    .portfolio_card_info{
+        font-size: 15px;
+    }
 }
 
 

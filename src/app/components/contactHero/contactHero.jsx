@@ -9,11 +9,33 @@ export default function ContactHero() {
     const heroRef = useRef(null);
     const email = "info@printpackadvertising.com";
 
-    const handleCopy = () => {
-        navigator.clipboard.writeText(email);
+   const handleCopy = async () => {
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+        } else {
+            const textarea = document.createElement("textarea");
+            textarea.value = email;
+            textarea.style.position = "fixed";
+            textarea.style.opacity = "0";
+
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+        }
+
         setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-    };
+
+        setTimeout(() => {
+            setCopied(false);
+        }, 2000);
+    } catch (error) {
+        console.error("Failed to copy email:", error);
+    }
+};
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -67,7 +89,7 @@ export default function ContactHero() {
                 </div>
                 <div className="hero_subheading_mask">
                     <p className="hero_subheading">
-                        Whether you want to know more about PPA, our services, or simply have something you'd like to ask
+                        Whether you want to know more about PPA, our services, or simply have something you'd like to ask.
                     </p>
                 </div>
             </div>
@@ -125,7 +147,7 @@ export default function ContactHero() {
                     <p className="info_text">
                         House # C-66, Karimabad, Block 4, Federal B Area,
                         <br />
-                        Karachi ,Pakistan          </p>
+                        Karachi ,Pakistan.          </p>
                 </div>
 
                 <div className="contact_info_block">

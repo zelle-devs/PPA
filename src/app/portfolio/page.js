@@ -1,5 +1,4 @@
 import React from "react";
-import FluidSmokeSection from "../components/inkCursor/FluidSmokeSection";
 import MaskRevealHero from "../components/inkCursor/MaskRevealSection";
 import ProjectShowcase from "../components/projectShowcase/projectShowcase";
 import Hero from "../components/heroSection/hero";
@@ -13,7 +12,7 @@ export const metadata = {
 
 
 const heroData = {
-    image: "/images/about.png",
+    image: "/images/portfolio.png",
 
     imageAlt:
         "Print, packaging and advertising production",

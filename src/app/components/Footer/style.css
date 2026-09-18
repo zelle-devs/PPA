@@ -356,7 +356,7 @@
 
 @media (max-width: 900px) {
   .site_footer {
-    padding: 0 2vw 2vw;
+    padding: 0 2vw 5vw;
   }
 
   .footer_inner {
@@ -380,6 +380,9 @@
   .footer_navigation nav {
     gap: 6px;
   }
+  .general_cc_details{
+  width: 50% !important;
+}
 }
 
 /* =========================================
@@ -509,7 +512,7 @@
 
 .cc_details_dev{
   
-  background-color: white;
+  background-color: transparent;
   padding: 5px 15px;
   border-radius: 10px 0px 0 0;
   display: flex;
@@ -528,6 +531,8 @@
   width: 20px;
   margin-right: 5px;  
 }
+
+
 
 .general_cc_details{
   width: 33.33%;
@@ -553,7 +558,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 5px;
     width: 100%;
     padding: 24px 20px 20px;
     box-sizing: border-box;
@@ -574,8 +579,21 @@
   /* Center the developer badge */
   .cc_details_dev {
     border-radius: 8px;
-    padding: 8px 14px;
+    padding: 0px 14px;
     font-size: 11px;
     align-self: center;
+  }
+}
+
+@media (max-width: 330px) {
+   .cc_details_dev {
+    font-size: 9px;
+   }
+}
+
+
+@media (max-width: 550px) {
+  .general_cc_details{
+    width: 100% !important;
   }
 }

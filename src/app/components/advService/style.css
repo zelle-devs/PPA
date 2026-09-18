@@ -64,7 +64,7 @@
    MOBILE / RESPONSIVE ADJUSTMENTS (Desktop Untouched)
    =================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   /* Prevent horizontal/vertical leaking from ScrollTrigger spacer */
   .service_portfolio_container {
     width: 100vw;
@@ -115,7 +115,7 @@
   .signboard_content_continer {
     position: relative;
     z-index: 1;
-    width: 90vw;
+    width: 74vw;
     height: 85vh;
     height: 85lvh;
     top: 5vh;
@@ -128,9 +128,9 @@
   }
 }
 /* Extra adjustments for very compact screens */
-@media (max-width: 480px) {
+@media (max-width: 1000px) {
   .signboard_content_continer {
-    width: 85vw;
+    width: 74vw;
     height: 55.4vh;
     top: 16%;
     flex-direction: column-reverse;

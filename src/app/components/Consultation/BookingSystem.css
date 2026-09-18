@@ -516,6 +516,7 @@
 @media (max-width: 768px) {
     .main-wrapper {
         margin-top: 15px;
+        padding-top: 28%;
     }
     
     .stepper {
@@ -616,13 +617,14 @@
     }
     
     .action-area-inner {
-        flex-direction: column;
+        flex-direction: row;
         gap: 12px;
         width: 100%;
+        padding: 0 10px;
     }
     
     .next-container, .back-container {
-        width: 100%;
+        width: fit-content;
     }
     
     .next-btn, .confirm-btn, .back-btn {

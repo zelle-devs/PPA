@@ -14,6 +14,8 @@ export default function ContactSection({ data }) {
     data?.image ||
     "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2940&auto=format&fit=crop";
 
+  const urgentPhone = data?.urgentPhone || "+92 310 5317868";
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -22,119 +24,161 @@ export default function ContactSection({ data }) {
     subject: "",
     message: "",
   });
-useLayoutEffect(() => {
-  const section = sectionRef.current;
-  if (!section) return;
 
-  const ctx = gsap.context(() => {
-    // 1. Intro Animation (Page scroll krty hi trigger hota hai)
-    const introTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top 75%",
-        toggleActions: "play none none none",
-      },
-      defaults: { ease: "power4.out" },
-    });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-    introTl
-      .from(".contact-image", {
-        clipPath: "inset(0 100% 0 0)",
-        duration: 1.6,
-        ease: "power4.inOut",
-      })
-      .from(".contact-eyebrow", {
-        yPercent: 100,
-        opacity: 0,
-        duration: 0.7,
-      }, "-=1.2")
-      .from(".contact-line-inner", {
-        yPercent: 110,
-        duration: 1,
-        stagger: 0.1,
-      }, "-=0.9")
-      .from(".contact-description, .contact-actions", {
-        opacity: 0,
-        y: 30,
-        stagger: 0.15,
-        duration: 0.8,
-      }, "-=0.7")
-      .from(".contact-form", {
-        opacity: 0,
-        y: 60,
-        scale: 0.95,
-        clipPath: "inset(0 0 100% 0)",
-        duration: 1.1,
-        ease: "power4.out",
-      }, "-=0.9")
-      .from(".contact-form-group", {
-        opacity: 0,
-        y: 25,
-        stagger: 0.07,
-        duration: 0.6,
-        ease: "power3.out",
-      }, "-=0.6")
-      .from(".contact-submit-btn", {
-        opacity: 0,
-        scale: 0.96,
-        y: 15,
-        duration: 0.5,
-      }, "-=0.3");
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
 
-    // 2. Continuous Scroll Zoom (Scroll ke mutabiq smoothly scale hoga)
-    gsap.to(".contact-image img", {
-      scale: 1.15, // Subtle aur light zoom (1 se 1.15)
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top bottom", // Jaise hi section view mein aana shuru ho
-        end: "bottom top",   // Jab section view se bahar nikal jaye
-        scrub: 1,           // 1 second ka smooth lag dega taake jerky motion na ho
-      },
-    });
-  }, section);
+    const ctx = gsap.context(() => {
+      const introTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+        defaults: { ease: "power4.out" },
+      });
 
-  return () => ctx.revert();
-}, [data]);
-const handleChange = (e) => {
-  const { name, value } = e.target;
+      introTl
+        .from(".contact-image", {
+          clipPath: "inset(0 100% 0 0)",
+          duration: 1.6,
+          ease: "power4.inOut",
+        })
+        .from(".contact-eyebrow", {
+          yPercent: 100,
+          opacity: 0,
+          duration: 0.7,
+        }, "-=1.2")
+        .from(".contact-line-inner", {
+          yPercent: 110,
+          duration: 1,
+          stagger: 0.1,
+        }, "-=0.9")
+        .from(".contact-description, .contact-actions", {
+          opacity: 0,
+          y: 30,
+          stagger: 0.15,
+          duration: 0.8,
+        }, "-=0.7")
+        .from(".contact-form", {
+          opacity: 0,
+          y: 60,
+          scale: 0.95,
+          clipPath: "inset(0 0 100% 0)",
+          duration: 1.1,
+          ease: "power4.out",
+        }, "-=0.9")
+        .from(".contact-form-group", {
+          opacity: 0,
+          y: 25,
+          stagger: 0.07,
+          duration: 0.6,
+          ease: "power3.out",
+        }, "-=0.6")
+        .fromTo(
+  ".contact-submit-btn",
+  { opacity: 0, scale: 0.96, y: 15 },
+  { opacity: 1, scale: 1, y: 0, duration: 0.5, clearProps: "all" },
+  "-=0.3"
+);
 
-  // If the input is the phone field, strip out any alphabetic or invalid characters
-  if (name === "phone") {
-    // Allows only numbers, '+', '-', '(', ')', and spaces
-    const sanitizedValue = value.replace(/[^0-9+\-()\s]/g, "");
+      gsap.to(".contact-image img", {
+        scale: 1.15,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+    }, section);
+
+    return () => ctx.revert();
+  }, [data]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      const sanitizedValue = value.replace(/[^0-9+\-()\s]/g, "");
+      setFormData((prev) => ({
+        ...prev,
+        [name]: sanitizedValue,
+      }));
+      return;
+    }
 
     setFormData((prev) => ({
       ...prev,
-      [name]: sanitizedValue,
+      [name]: value,
     }));
-    return;
-  }
+  };
 
-  setFormData((prev) => ({
-    ...prev,
-    [name]: value,
-  }));
-};
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Contact Form Submitted:", formData);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    const payload = {
+      full_name: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company || "N/A",
+      subject: formData.subject,
+      message: formData.message,
+      agree_pp: true,
+    };
+
+    try {
+      const response = await fetch("https://ajgrouphqapi.zellehost.com/api/ppa-contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      setErrorMessage(error.message || "Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section ref={sectionRef} className="contact-section">
       <div className="contact-image">
-        <picture>
-          <source
-            media="(max-width: 768px)"
-            srcSet={bgImage.replace(/(\.[^.]+)$/, "-mobile$1")}
-          />
-          <img
-            src={bgImage}
-            alt={data?.imageAlt || "Contact Section Background"}
-          />
-        </picture>
+       <picture>
+  {/* Mobile: <= 768px */}
+  <source
+    media="(max-width: 768px)"
+    srcSet={bgImage.replace(/(\.[^.]+)$/, "-mobile$1")}
+  />
+
+  {/* Tablet: 769px - 1000px */}
+  <source
+    media="(min-width: 769px) and (max-width: 1000px)"
+    srcSet={bgImage.replace(/(\.[^.]+)$/, "-tablet$1")}
+  />
+
+  {/* Desktop: > 1000px */}
+  <img
+    src={bgImage}
+    alt={data?.imageAlt || "Contact Section Background"}
+  />
+</picture>
       </div>
 
       <div className="contact-overlay" />
@@ -177,88 +221,141 @@ const handleChange = (e) => {
         </div>
 
         <div className="contact-right">
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="contact-form-group">
-              <label htmlFor="fullName">Full Name*</label>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                placeholder="Full Name"
-                value={formData.fullName}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="contact-form-group">
-              <label htmlFor="email">Email Address*</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="email@example.com"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="contact-form-row">
-              <div className="contact-form-group">
-                <label htmlFor="phone">Phone.*</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
+          {isSubmitted ? (
+            <div className="contact-form contact-success-card">
+              <div className="check-circle">
+                <svg className="checkmark" viewBox="0 0 52 52">
+                  <circle className="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                  <path className="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
               </div>
+
+              <h3 className="success-title">Thank You!</h3>
+              <p className="success-subtitle">
+                Your message has been sent successfully. Our team will review your inquiry and get back to you shortly.
+              </p>
+
+              <div className="urgent-contact-box">
+                <p className="urgent-title">Need an urgent response?</p>
+                <p className="urgent-desc">
+                  Call our direct line directly at{" "}
+                  <a href={`tel:${urgentPhone.replace(/[^0-9+]/g, "")}`} className="urgent-phone-link">
+                    {urgentPhone}
+                  </a>
+                </p>
+              </div>
+
+              <button
+                type="button"
+                className="contact-submit-btn contact-reset-btn"
+                onClick={() => {
+                  setIsSubmitted(false);
+                  setFormData({
+                    fullName: "",
+                    email: "",
+                    phone: "",
+                    company: "",
+                    subject: "",
+                    message: "",
+                  });
+                }}
+              >
+                Send Another Message
+              </button>
+            </div>
+          ) : (
+            <form className="contact-form" onSubmit={handleSubmit}>
+              {errorMessage && (
+                <div className="contact-error-banner">{errorMessage}</div>
+              )}
+
               <div className="contact-form-group">
-                <label htmlFor="company">Company</label>
+                <label htmlFor="fullName">Full Name*</label>
                 <input
                   type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Company."
-                  value={formData.company}
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Full Name"
+                  value={formData.fullName}
                   onChange={handleChange}
+                  required
                 />
               </div>
-            </div>
 
-            <div className="contact-form-group">
-              <label htmlFor="subject">Subject*</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Project Inquiry"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-              />
-            </div>
+              <div className="contact-form-group">
+                <label htmlFor="email">Email Address*</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="email@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-            <div className="contact-form-group">
-              <label htmlFor="message">Message*</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                placeholder="Tell us about your goals..."
-                value={formData.message}
-                onChange={handleChange}
-                required
-              />
-            </div>
+              <div className="contact-form-row">
+                <div className="contact-form-group">
+                  <label htmlFor="phone">Phone*</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="contact-form-group">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Company."
+                    value={formData.company}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
 
-            <button type="submit" className="contact-submit-btn">
-              Send Message <span>→</span>
-            </button>
-          </form>
+              <div className="contact-form-group">
+                <label htmlFor="subject">Subject*</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Project Inquiry"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="contact-form-group">
+                <label htmlFor="message">Message*</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  placeholder="Tell us about your inquiry..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="contact-submit-btn"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"} <span>→</span>
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>

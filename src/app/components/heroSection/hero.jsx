@@ -243,20 +243,27 @@ export default function Hero({ data }) {
     BACKGROUND IMAGE
 ===================================================== */}
 
-      <div className="hero-image">
-        <picture>
-          {/* Serves image with '-mobile' inserted before extension on screens <= 768px */}
-          <source
-            media="(max-width: 768px)"
-            srcSet={data.image?.replace(/(\.[^.]+)$/, "-mobile$1")}
-          />
-          {/* Default / Desktop image */}
-          <img
-            src={data.image}
-            alt={data.imageAlt || data.eyebrow || ""}
-          />
-        </picture>
-      </div>
+   <div className="hero-image">
+  <picture>
+    {/* Mobile: <= 768px */}
+    <source
+      media="(max-width: 768px)"
+      srcSet={data.image?.replace(/(\.[^.]+)$/, "-mobile$1")}
+    />
+
+    {/* Tablet: 769px - 1000px */}
+    <source
+      media="(min-width: 769px) and (max-width: 1000px)"
+      srcSet={data.image?.replace(/(\.[^.]+)$/, "-tablet$1")}
+    />
+
+    {/* Desktop: > 1000px */}
+    <img
+      src={data.image}
+      alt={data.imageAlt || data.eyebrow || ""}
+    />
+  </picture>
+</div>
 
 
       {/* =====================================================

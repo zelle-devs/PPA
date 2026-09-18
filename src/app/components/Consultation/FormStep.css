@@ -128,7 +128,6 @@
     font-size: var(--font-size-sm);
     width: 100%;
     font-family: var(--font-family-secondary);
-    /* color: var(--color-white); */
     outline: none;
     transition: all var(--transition-normal);
     box-sizing: border-box;
@@ -166,13 +165,12 @@ textarea.neu-input {
     cursor: pointer;
     padding: 8px;
     padding-right: 28px;
+    height: 34.5px;
     position: relative;
-    margin-top: 5px !important;
     background: transparent;
     border: 1px solid var(--color-blue-medium);
     border-radius: var(--radius-xl);
     transition: all var(--transition-normal);
-    color: var(--color-white)!important;
 }
 
 .custom-trigger:hover {
@@ -180,7 +178,6 @@ textarea.neu-input {
 }
 
 .custom-trigger span {
-    /* font-weight: var(--font-weight-medium); */
     font-size: var(--font-size-sm);
     flex: 1;
     overflow: hidden;
@@ -219,6 +216,29 @@ textarea.neu-input {
     box-shadow: var(--shadow-dark);
     max-height: 160px;
     overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    pointer-events: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+}
+
+.neu-dropdown-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.neu-dropdown-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.neu-dropdown-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 4px;
+}
+
+.neu-dropdown-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .neu-option {
@@ -230,6 +250,7 @@ textarea.neu-input {
     transition: all var(--transition-normal);
     line-height: 1.2;
     font-family: var(--font-family-secondary);
+    user-select: none;
 }
 
 .neu-option:hover {
@@ -296,8 +317,8 @@ textarea.neu-input {
     gap: 8px;
     padding: 7px 10px;
     border-radius: var(--radius-xl);
-    border: 1px solid var(--color-dark-border);
-    background: var(--color-black);
+    border: 1px solid var(--color-blue-medium);
+    background: white;
     font-size: var(--font-size-xs);
     font-family: var(--font-family-secondary);
     color: var(--color-steel-main);
@@ -316,8 +337,8 @@ textarea.neu-input {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: var(--color-black-light);
-    border: 1px solid var(--color-dark-border);
+    background: white;
+    border: 1px solid var(--color-blue-medium);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -342,7 +363,7 @@ textarea.neu-input {
     border-color: var(--color-blue-main);
     color: var(--color-white);
     font-weight: var(--font-weight-semibold);
-    background: var(--color-black-light);
+    background: var(--color-blue-medium);
 }
 
 /* ==================== ERROR ==================== */

@@ -28,8 +28,8 @@ const projects = [
   },
    {
     id: 3,
-    tag: 'ENGRO',
-    title: "Consistent packaging production for Engro's product range. ",
+    tag: 'APKI SAHULAT',
+    title: "Illuminated signage, billboards & in-store displays for Sahulat Pharmacy. ",
     image: '/images/projects/3p.png',
     layout: 'full-span',
     parallaxSpeed: -0.15,
@@ -134,10 +134,10 @@ export default function ProjectShowcase() {
                   className="project-image"
                   priority={project.id === 1}
                 />
-                <button className="project-badge" aria-label="Explore Project">
+                {/* <button className="project-badge" aria-label="Explore Project">
                   <span>EXPLORE</span>
                   <span className="badge-arrow">→</span>
-                </button>
+                </button> */}
               </div>
             </div>
           </article>

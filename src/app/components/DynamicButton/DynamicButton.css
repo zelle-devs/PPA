@@ -13,6 +13,7 @@
   font-family: var(--font-family-primary);
   padding: 0 24px;
   text-transform: uppercase;
+  width: 100%;
 }
 
 /* ============ SIZE PRESETS ============ */
@@ -144,7 +145,9 @@
   }
   .db-btn {
     padding: 0 16px;
+    width: fit-content !important;
   }
+
 }
 
 @media (max-width: 350px) {

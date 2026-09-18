@@ -10,7 +10,7 @@ const heroData = {
     "Print, packaging and advertising production",
 
   eyebrow:
-    "ABOUT PRINT, PACK & ADVERTISING",
+    "ABOUT",
 
   heading: {
     line1: "WE MAKE BRANDS",

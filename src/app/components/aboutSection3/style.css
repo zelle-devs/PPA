@@ -112,6 +112,19 @@
 /* ====================================================
    Mobile View (<= 900px): Clean Circular Arc
    ==================================================== */
+
+@media (max-width: 1000px) {
+  .outputs_as3_slides{
+    width: 400px !important;
+    height: 600px !important;
+  }
+  .outputs_as3_slide{
+    width: 100% !important;
+    height: 600px !important;
+  }
+}
+
+
 @media (max-width: 900px) {
   .about_section_3 {
     padding: 24px 16px;
@@ -165,5 +178,17 @@
   }
   .bottom_heading{
     margin: 0 0 40px;
+  }
+}
+
+
+@media (max-width: 760px) {
+    .outputs_as3_slides{
+       width: 260px !important;
+    height: 400px !important;
+  }
+  .outputs_as3_slide{
+    width: 260px !important;
+    height: 400px !important;
   }
 }

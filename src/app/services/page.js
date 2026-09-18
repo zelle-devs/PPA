@@ -12,13 +12,13 @@ export const metadata = {
 };
 
 const heroData = {
-    image: "/images/about.png",
+    image: "/images/portfolio.png",
 
     imageAlt:
         "Services",
 
     eyebrow:
-        "SERVICES PRINT, PACK & ADVERTISING",
+        "SERVICES",
 
     heading: {
         line1: "THREE WAYS TO MAKE",

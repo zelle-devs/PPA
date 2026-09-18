@@ -173,7 +173,7 @@ export default function ServicesIntro() {
                                 <div className="slide_si_media">
                                     <picture className="slide_si_picture">
                                         {service.mobimage && (
-                                            <source media="(max-width: 768px)" srcSet={service.mobimage} />
+                                            <source media="(max-width: 1000px)" srcSet={service.mobimage} />
                                         )}
                                         <img
                                             src={service.image}

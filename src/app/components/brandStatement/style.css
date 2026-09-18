@@ -258,6 +258,7 @@
 
     .brand_statement_heading {
         left: 6vw;
+        top: 22vh;
     }
 
 
@@ -293,7 +294,8 @@
         min-height: 450px;
 
         grid-template-columns:
-            40% 60%;
+            /* 40% 60%; */
+            1fr;
 
         bottom: 0;
     }

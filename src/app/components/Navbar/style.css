@@ -727,3 +727,55 @@
         display: none;
     }
 }
+
+/* =========================================
+   MOBILE DRAWER QUOTE BUTTON (RIGHT-ALIGNED)
+========================================= */
+
+.mobile_quote_wrapper {
+  display: flex;
+  justify-content: flex-end; /* Aligns button to the right */
+  width: 100%;
+  padding-top: 24px;
+}
+
+.mobile_quote_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  /* Matches the look and feel of .mobile_close_btn */
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #1d1d1d;
+  color: #fff !important;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+
+  transition: 
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* .mobile_quote_btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.25);
+} */
+
+.mobile_quote_btn:active {
+  transform: scale(0.95);
+}
+
+/* Adjust top margin of mobile nav links now that the button sits above them */
+.mobile_nav_links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}

@@ -13,7 +13,7 @@ export default function HPSecondSection() {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            const isMobile = window.matchMedia("(max-width: 700px)").matches;
+            const isMobile = window.matchMedia("(max-width: 1000px)").matches;
 
             /* =================================================
                LEFT HEADING & LINE

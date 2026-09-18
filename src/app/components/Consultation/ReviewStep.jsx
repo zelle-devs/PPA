@@ -90,7 +90,7 @@ const ReviewStep = ({ formData, selectedDate, selectedTime, onEditDate, onEditFo
                         <div className="section-label">Business Needs</div>
                         <div className="review-grid">
                             <div className="review-item-wrapper">
-                                <span>Primary Goal</span>
+                                {/* <span>Primary Goal</span> */}
                                 <div className="review-item">
                                     <p>{formData.primaryGoal}</p>
                                 </div>

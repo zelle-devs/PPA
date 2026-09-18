@@ -5,20 +5,9 @@ import './LoadingSpinner.css'
 const LoadingSpinner = () => {
   return (
     <div className="ls-overlay">
-      <div className="ls-spinner">
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-dot"></div>
-        <div className="ls-text">Loading…</div>
+      <div className="ls-card">
+        <div className="ls-ring"></div>
+        <span className="ls-text">Please Wait...</span>
       </div>
     </div>
   )

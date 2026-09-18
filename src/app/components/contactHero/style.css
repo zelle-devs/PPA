@@ -141,8 +141,18 @@
 /* =========================================================
    RESPONSIVE
 ========================================================= */
+@media (max-width: 1000px) {
+    .contact_hero {
+        min-height: 50vh;
+        padding: 20% 6% 40px;
+        gap: 60px;
+    justify-content: flex-start;
+    }
+}
 
-@media (max-width: 900px) {
+
+
+@media (max-width: 760px) {
   .contact_hero {
     padding: 20% 6% 40px;
     height: auto;
@@ -156,5 +166,5 @@
     gap: 32px;
   }
 
-  
+
 }

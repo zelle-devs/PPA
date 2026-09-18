@@ -1,15 +1,7 @@
-import About from "./components/about";
+
 import BrandStatement from "./components/brandStatement/brandStatement";
-import ScrollFrameSequence from "./components/cupAnimation/cupAnimation";
-import Footer from "./components/Footer/footer";
 import Hero from "./components/heroSection/hero";
 import HPSecondSection from "./components/homepage/secondSection";
-import HorizontalSection from "./components/horizontalSection";
-import FluidSmokeSection from "./components/inkCursor/FluidSmokeSection";
-import FluidSection from "./components/inkCursor/inkCursor";
-import MaskRevealSection from "./components/inkCursor/MaskRevealSection";
-import Navbar from "./components/Navbar/navbar";
-import Equipment from "./components/pinnedSection";
 import PortfolioDetailsHome from "./components/portfolioDetails/portfilioDetails";
 import ServicesIntro from "./components/servicesIntro/servicesIntro";
 
