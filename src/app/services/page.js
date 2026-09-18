@@ -81,7 +81,7 @@ export default function Home() {
                     frames={PRINT_FRAMES}
                     headingMain="PUT IT ON PAPER."
                     headingSub="MAKE IT COUNT."
-                    tag="CAPABILITIES"
+                    tag="PRINTING"
                     items={[
                         "Business cards.",
                         "Brochures.",

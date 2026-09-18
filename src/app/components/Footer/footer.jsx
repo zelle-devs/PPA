@@ -359,9 +359,9 @@ export default function Footer() {
               info@printpackadvertising.com
             </a>
 
-            <div className="social_links">
+            {/* <div className="social_links">
               <a href="#">in</a>
-            </div>
+            </div> */}
           </div>
         </div>
 

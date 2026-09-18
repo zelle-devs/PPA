@@ -21,13 +21,13 @@ const portfolioCards = [
     },
     {
         id: 2,
-        image: "/images/projects/project2.png",
+        image: "/images/projects/project3.png",
         category: "PACKAGING",
         alt: "Packaging project",
     },
     {
         id: 3,
-        image: "/images/projects/project3.png",
+        image: "/images/projects/project2.png",
         category: "SIGNAGE",
         alt: "Signage project",
     }
@@ -301,6 +301,9 @@ export default function PortfolioDetailsHome() {
                 <div className="portfolio_end">
 
                     <button
+                      onClick={()=>{
+                        window.location.href="/portfolio"
+                      }}
                         className="portfolio_work_button"
                     >
 

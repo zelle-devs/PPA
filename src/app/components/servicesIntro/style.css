@@ -166,23 +166,27 @@
 }
 
 
+.slide_si_picture {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
 /* =========================================================
    SLIDE
 ========================================================= */
 
+/* Update slide width to fill visible area without overflowing early */
 .slide_si {
-
-    position: relative;
-
-    flex: 0 0 100vw;
-
-    width: 100vw;
-
-    height: 100%;
-
-    overflow: hidden;
-    border-radius: 15px;
-
+  position: relative;
+  flex: 0 0 calc(100vw - 40px); /* 40px accounts for .services_intro padding: 20px */
+  width: calc(100vw - 40px);
+  height: 100%;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
 
@@ -599,13 +603,14 @@
         flex-basis: 86vw;
 
         width: 86vw;
+        max-height: 70vh;
 
     }
 
 
     .slide_si_content {
 
-        left: 7vw;
+        top: 7vw;
 
         right: 7vw;
 
@@ -652,12 +657,13 @@
 
     .services_explore {
 
-        margin-top: 22px;
+        /* margin-top: 22px;
 
         padding:
             15px 18px;
 
-        gap: 30px;
+        gap: 30px; */
+        display: none;
 
     }
 

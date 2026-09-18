@@ -610,8 +610,8 @@
 @media (max-width: 380px) {
 
     .site_navbar {
-        left: 4vw;
-        right: 4vw;
+        left: 0vw;
+        right: 0vw;
 
         padding-left: 16px;
     }
@@ -644,3 +644,86 @@
     }
 }
 
+
+
+.request_quote_side{
+    letter-spacing: .12em;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    min-width: 190px;
+    padding: 16px 18px;
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background .3s, color .3s, border-color .3s;
+    display: flex;
+    border: 1px solid #000;
+    margin: 20px auto;
+
+}
+
+/* =========================================
+   STANDALONE FLOATING BUTTON (RIGHT)
+========================================= */
+
+.floating_right_btn {
+    position: fixed;
+    top: 18px;
+    right: 38px;
+    z-index: 9999;
+    height: 55px; /* Matches exact height of the navbar pill */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 32px;
+    border-radius: 100px;
+    
+    /* Sleek black pill (or switch to glass background if preferred) */
+    background: #111111;
+    color: #ffffff;
+    
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+
+    transition: 
+        transform 0.3s ease, 
+        background 0.3s ease, 
+        box-shadow 0.3s ease;
+}
+
+.floating_right_btn:hover {
+    background: var(--color-blue-dark);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.floating_right_btn:active {
+    transform: scale(0.96);
+}
+
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+========================================= */
+
+@media (max-width: 900px) {
+    .floating_right_btn {
+        right: 25px;
+        padding: 0 24px;
+        font-size: 13px;
+    }
+}
+
+/* Hide standalone button on mobile screens (accessible via drawer menu) */
+@media (max-width: 650px) {
+    .floating_right_btn {
+        display: none;
+    }
+}
