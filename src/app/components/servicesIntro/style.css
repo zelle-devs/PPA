@@ -12,7 +12,7 @@
 
     height: 100vh;
 
-    min-height: 700px;
+    min-height: 450px;
 
     overflow: hidden;
 
@@ -287,8 +287,8 @@
 
     right: 5vw;
 
-    bottom: 7vh;
-
+    /* bottom: 7vh; */
+    top: 20vh;
     z-index: 5;
 
     display: flex;

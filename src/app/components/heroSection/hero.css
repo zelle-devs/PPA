@@ -5,8 +5,8 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 700px;
+  height: 100dvh;
+  min-height: 600px;
   overflow: hidden;
   background: var(--color-white, #ffffff);
   color: var(--color-black, #000000);
@@ -78,7 +78,7 @@
 /* Eyebrow */
 .hero-eyebrow-mask {
   position: absolute;
-  top: 18%;
+  top: 17%;
   left: 0;
   overflow: hidden;
 }
@@ -95,13 +95,11 @@
   color: var(--color-blue-dark, #0065a8);
 }
 
-
-
-/* Heading */
+/* Heading - ORIGINAL FULL SIZES KEPT EXACTLY INTACT */
 .hero-heading {
   position: absolute;
   left: 0;
-  top: 25%;
+  top: 22%;
   width: 75%;
   will-change: transform;
 }
@@ -139,29 +137,30 @@
 }
 
 /* =========================================================
-   BOTTOM SECTION
+   BOTTOM SECTION (MOVED A LITTLE TO THE TOP)
 ========================================================= */
 
 .hero-bottom {
   position: absolute;
   left: 0;
-  bottom: 12%;
+  /* Shifted up: uses 6vh with safe min/max boundaries */
+  bottom: clamp(48px, 6vh, 72px);
   width: 75%;
   will-change: transform, opacity;
 }
 
 .hero-description {
   width: 390px;
-  margin: 0 0 25px;
+  margin: 0 0 16px;
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--color-black-dark, #3d3d3d);
 }
 
 .hero-services {
   display: flex;
   gap: 0;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .hero-services span {
@@ -188,7 +187,7 @@
   justify-content: flex-start;
   gap: 30px;
   border-top: 1px solid var(--color-gray-lighter, #d9d9d9);
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 /* Buttons */
@@ -203,7 +202,7 @@
   justify-content: space-between;
   gap: 40px;
   min-width: 190px;
-  padding: 16px 18px;
+  padding: 14px 18px;
   text-decoration: none;
   font-size: 10px;
   font-weight: 600;
@@ -220,7 +219,7 @@
   transform: translateX(5px);
 }
 
-/* Primary Button (Dark on Light) */
+/* Primary Button */
 .hero-button-primary {
   color: var(--color-white, #ffffff);
   background: var(--color-black-light, #1d1d1d);
@@ -231,7 +230,7 @@
   color: var(--color-white, #ffffff);
 }
 
-/* Secondary Button (Bordered Light) */
+/* Secondary Button */
 .hero-button-secondary {
   color: var(--color-black-light, #1d1d1d);
   background: transparent;
@@ -250,7 +249,7 @@
 .hero-scroll {
   position: absolute;
   right: 3%;
-  bottom: 7%;
+  bottom: clamp(48px, 6vh, 72px);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -267,7 +266,7 @@
 
 .hero-scroll div {
   width: 1px;
-  height: 55px;
+  height: 45px;
   background: var(--color-gray-light, #bbbbbb);
 }
 
@@ -310,7 +309,41 @@
 }
 
 /* =========================================================
-   RESPONSIVE BREAKPOINTS
+   SHORT SCREEN ADAPTATION
+========================================================= */
+
+@media (max-height: 760px) {
+  .hero-bottom {
+    bottom: 28px; /* Slightly up from the edge while staying safe */
+  }
+
+  .hero-description {
+    margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .hero-services {
+    margin-bottom: 12px;
+  }
+
+  .hero-footer {
+    padding-top: 12px;
+    gap: 16px;
+  }
+
+  .hero-button {
+    padding: 10px 14px;
+    min-width: 160px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (WIDTH)
 ========================================================= */
 
 @media (max-width: 1000px) {
@@ -337,7 +370,7 @@
 
 @media (max-width: 700px) {
   .hero {
-    min-height: 750px;
+    min-height: 700px;
   }
 
   .hero-container {
@@ -345,7 +378,7 @@
   }
 
   .hero-eyebrow-mask {
-    top: 18%;
+    top: 14%;
   }
 
   .hero-eyebrow {
@@ -353,12 +386,8 @@
     letter-spacing: 0.13em;
   }
 
-  .hero-eyebrow::before {
-    width: 30px;
-  }
-
   .hero-heading {
-    top: 22%;
+    top: 18%;
     width: 100%;
   }
 
@@ -378,20 +407,21 @@
 
   .hero-bottom {
     width: 100%;
-    bottom: 20%;
+    bottom: 12%; /* Shifted up slightly from 20px */
   }
 
   .hero-description {
     width: 100%;
     max-width: 330px;
     font-size: 11px;
-    line-height: 1.55;
+    line-height: 1.5;
+    margin-bottom: 12px;
   }
 
   .hero-services {
     overflow: hidden;
     white-space: nowrap;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
 
   .hero-services span {
@@ -399,14 +429,11 @@
     font-size: 7px;
   }
 
-  .hero-services span:first-child {
-    padding-left: 0;
-  }
-
   .hero-footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 12px;
+    padding-top: 12px;
   }
 
   .hero-buttons {
@@ -416,9 +443,9 @@
   .hero-button {
     flex: 1;
     min-width: 0;
-    padding: 13px 12px;
+    padding: 12px;
     gap: 10px;
-    font-size: 7px;
+    font-size: 8px;
   }
 
   .hero-scroll {
