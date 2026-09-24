@@ -32,7 +32,7 @@ const projects = [
     title: "Illuminated signage, billboards & in-store displays. ",
     image: '/images/projects/3p.png',
     layout: 'full-span',
-    parallaxSpeed: 0.9,
+    parallaxSpeed: 0.2,
   },
     {
     id: 4,
