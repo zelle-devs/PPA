@@ -13,36 +13,43 @@ const projects = [
   {
     id: 1,
     tag: 'OXYGEN GYM',
-    title: 'Custom branding, wall graphics & signage for Oxygen Gym.',
-    image: '/images/projects/1p.png',
+    title: 'Custom branding, wall graphics & signage.',
+    image: '/images/projects/gym_project.png',
     layout: 'column-left',
     parallaxSpeed: 0.12,
   },
   {
     id: 2,
     tag: 'SOGO',
-    title: 'Branded displays, billboards & promotional pieces for SOGO.',
-    image: '/images/projects/2p.png',
+    title: 'Branded displays, billboards & promotional pieces.',
+    image: '/images/projects/sogo_project.png',
     layout: 'column-right',
-    parallaxSpeed: -0.15,
+    parallaxSpeed: -0.3,
   },
    {
     id: 3,
     tag: 'APKI SAHULAT',
-    title: "Illuminated signage, billboards & in-store displays for Sahulat Pharmacy. ",
+    title: "Illuminated signage, billboards & in-store displays. ",
     image: '/images/projects/3p.png',
     layout: 'full-span',
-    parallaxSpeed: -0.15,
+    parallaxSpeed: 0.9,
   },
-  // {
-  //   id: 4,
-  //   tag: 'APKI SAHULAT',
-  //   title: 'Illuminated signage, billboards & in-store displays for Sahulat Pharmacy.',
-  //   image: '/images/projects/4p.png',
-  //  layout: 'column-right',
-  //   parallaxSpeed: 0.08,
-  // },
- 
+    {
+    id: 4,
+    tag: 'ENGRO',
+    title: 'Branded packaging and boxes for a consistent product identity.',
+    image: '/images/projects/engro_project.png',
+    layout: 'column-left',
+    parallaxSpeed: 0.12,
+  },
+  {
+    id: 5,
+    tag: 'NEW KHYBER',
+    title: 'Custom signage with a logo board and contour-cut portrait display.',
+    image: '/images/projects/shinwari_project.png',
+    layout: 'column-right',
+    parallaxSpeed: 0.4,
+  }
 ];
 
 export default function ProjectShowcase() {
