@@ -2,6 +2,8 @@ import React from "react";
 import MaskRevealHero from "../components/inkCursor/MaskRevealSection";
 import ProjectShowcase from "../components/projectShowcase/projectShowcase";
 import Hero from "../components/heroSection/hero";
+import PortFolioProjects from "../components/portfolioProjects/portfolioProjects";
+import PortfolioProjectsMobile from "../components/portfolioProjects/portfolioProjectsMobile";
 
 
 export const metadata = {
@@ -47,16 +49,23 @@ const heroData = {
 
 export default function Portfolio() {
     return (
-        <div className="portfolio">
+        <>
+       <main className="main-content">
             {/* <FluidSmokeSection/> */}
             <div className="herosection_port_mob">
                 <Hero data={heroData} />
             </div>
+
+
             <div className="herosection_port_desk">
                 <MaskRevealHero />
             </div>
 
-            <ProjectShowcase />
-        </div>
+            <PortFolioProjects />
+            <PortfolioProjectsMobile/>
+
+            {/* <ProjectShowcase /> */}
+        </main>
+        </>
     )
 }

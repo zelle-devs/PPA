@@ -127,8 +127,15 @@
     pointer-events: auto;
   }
 }
+  .text_break_brands{
+    display: none;
+  }
 /* Extra adjustments for very compact screens */
 @media (max-width: 1000px) {
+
+  .text_break_brands{
+    display: block;
+  }
   .signboard_content_continer {
     width: 74vw;
     height: 55.4vh;

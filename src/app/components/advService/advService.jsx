@@ -306,7 +306,7 @@ export default function AdvService() {
           <p>{splitCharacters("ADVERTISING SOLUTIONS")}</p>
           <h2>
             {splitCharacters("BRANDS")} <br />
-            {splitCharacters("THAT")}{" "}
+            {splitCharacters("THAT ")}<br className="text_break_brands" />
             <span style={{ color: "#D9BB88" }}>
               {splitCharacters("GET NOTICED.", "gold_char")}
             </span>

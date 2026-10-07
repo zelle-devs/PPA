@@ -30,7 +30,7 @@
   z-index: 1;
   pointer-events: none;
   opacity: 0;
-}
+ }
 
 /* Split Headings */
 .paper_header_block {
@@ -181,7 +181,8 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 20px 16px 40px;
-    gap: 14px;
+    gap: 8px;
+    bottom: 1%;
   }
   .paper_list_col {
     display: none;
@@ -189,5 +190,8 @@
   .paper_statement_col {
     max-width: 100%;
     width: 100%;
+  }
+  .paper_header_block {
+    top: 44%;
   }
 }

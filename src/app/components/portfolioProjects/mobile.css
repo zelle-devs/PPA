@@ -1,0 +1,151 @@
+/* =========================================
+   MOBILE PORTFOLIO (hidden on desktop)
+========================================= */
+
+.ppm_section {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .ppm_section {
+    display: block;
+  }
+}
+
+/* =========================================
+   ONE CLIENT = ONE FULL SCREEN
+========================================= */
+
+.ppm_project {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* background on each screen so it stays correct while pinned */
+  /* background-image: url("/wooden-bg.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ 
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.ppm_title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.ppm_logo {
+  width: 42px;
+  height: auto;
+}
+
+.ppm_heading {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 26px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+    color: #151718;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.ppm_description {
+  margin: 12px 0 4px;
+  padding: 0 20px;
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  /* color: rgba(255, 255, 255, 0.9); */
+  color: #151718;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================
+   IMAGES ROW
+========================================= */
+
+.ppm_scroller {
+  width: 100%;
+  padding: 18px 0 26px; /* room for tilt + shadows */
+}
+
+.ppm_track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  padding: 0 20px;
+  will-change: transform;
+}
+
+.ppm_card {
+  /* width also limited by screen height so short phones still fit */
+  flex: 0 0 min(79vw, 320px, 48svh);
+
+  padding: 5px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* slight alternating tilt, like photos on a table */
+.ppm_card:nth-child(odd) {
+  transform: rotate(-1.5deg);
+}
+
+.ppm_card:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.ppm_card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* =========================================
+   COUNTER + PROGRESS BAR
+========================================= */
+
+.ppm_footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+}
+
+.ppm_counter {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #151718;
+  white-space: nowrap;
+}
+
+.ppm_progress {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.ppm_progress_fill {
+  height: 100%;
+  background: #151718;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
