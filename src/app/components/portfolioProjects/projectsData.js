@@ -128,7 +128,7 @@ export const projects = [
         logo_img: "/logo1.png",
         heading: "Miscellaneous Signage Work",
         description:
-            "Miscellaneous Signage Work.",
+            "Custom signage solutions for retail, commercial, hospitality, and residential spaces. From illuminated signs to directional displays, built for visibility and impact.",
         images: [
             "/images/projects0/mis1.jpeg",
             "/images/projects0/mis2.jpeg",
@@ -152,7 +152,7 @@ export const projects = [
         logo_img: "/logo1.png",
         heading: "Miscellaneous Signage Work",
         description:
-            "Miscellaneous Signage Work.",
+            "Custom signage solutions for retail, commercial, hospitality, and residential spaces. From illuminated signs to directional displays, built for visibility and impact.",
         images: [
             "/images/projects0/mis10.jpeg",
             "/images/projects0/mis11.jpeg",
