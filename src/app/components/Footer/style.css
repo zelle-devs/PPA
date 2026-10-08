@@ -464,7 +464,7 @@
   }
 
   .footer_contact {
-    margin-top: 35px;
+    margin-top: 5px;
   }
 
   .footer_email {
@@ -595,5 +595,9 @@
 @media (max-width: 550px) {
   .general_cc_details{
     width: 100% !important;
+  }
+  .hero-button.sp{
+    font-size: 12px !important;
+    /* width: 100% !important; */
   }
 }

@@ -135,7 +135,6 @@
   will-change: transform, opacity;
 }
 
-/* Mobile & Tablet Responsiveness */
 @media (max-width: 900px) {
   .about_section_two {
     height: auto;
@@ -146,6 +145,7 @@
   .about_inner_container {
     grid-template-columns: 1fr;
     gap: 40px;
+    margin-top: 3lvh;
   }
 
   .ast_card {
@@ -154,5 +154,12 @@
 
   .ast_cards_row_top {
     grid-template-columns: 1fr 1fr;
+  }
+}
+.ast_cta_btn { transition: none; }
+@media (max-width: 550px) {
+
+  .hero-button.sp{
+    width: 50% !important;
   }
 }

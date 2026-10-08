@@ -45,6 +45,7 @@ export default function AboutSection2() {
       gsap.set(".meaning_ast_headings", { opacity: 0, y: 30 });
       gsap.set(".purpose_ast_main_heading", { opacity: 0, y: 40 });
       gsap.set(".details_para_ast", { opacity: 0, y: 30 });
+      gsap.set(".ast_cta_btn", { opacity: 0, y: 30, scale: 0.95 });
 
       // Master Timeline pinned with ScrollTrigger
       const tl = gsap.timeline({
@@ -89,6 +90,13 @@ export default function AboutSection2() {
         y: 0,
         duration: 0.8,
         ease: "power2.out",
+      }, "-=0.4");
+      tl.to(".ast_cta_btn", {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: "back.out(1.6)",
       }, "-=0.4");
 
     }, sectionRef);
@@ -144,6 +152,16 @@ export default function AboutSection2() {
             the tactile, visual assets businesses need to be seen, remembered,
             and taken seriously.
           </p>
+
+
+          <a
+            style={{ width: "fit-content", marginTop: "10px" }}
+            href="/consultation"
+            className="hero-button hero-button-primary ast_cta_btn sp"
+          >
+            Start Project
+            <span>→</span>
+          </a>
         </div>
       </div>
     </section>

@@ -8,14 +8,6 @@ import "./style.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* =========================================
-   SLOTS: generated around an ellipse
-   (one slot per image, any count)
-   x / y = base position of the card's center,
-   in % of screen width / height from the center.
-   from = which edge it slides in from
-   size = card width in px
-========================================= */
 
 const SIZES = [290, 260, 320];
 const RADIUS_X = 42; // % of screen width from center
