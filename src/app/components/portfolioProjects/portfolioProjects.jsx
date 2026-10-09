@@ -18,7 +18,7 @@ import { IoChevronForward, IoChevronBack } from "react-icons/io5";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SIZES = [290, 260, 320];
+const SIZES = [270, 240, 300];
 const RADIUS_X = 42; 
 const RADIUS_Y = 40; 
 
