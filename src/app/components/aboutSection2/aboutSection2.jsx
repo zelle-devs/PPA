@@ -159,7 +159,7 @@ export default function AboutSection2() {
             href="/consultation"
             className="hero-button hero-button-primary ast_cta_btn sp"
           >
-            Start Project
+            START A PROJECT
             <span>→</span>
           </a>
         </div>

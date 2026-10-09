@@ -1,17 +1,26 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+import { createPortal } from "react-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "./projectsData";
 import "./style.css";
+import Lightbox from "./Lightbox";
+import { IoChevronForward, IoChevronBack } from "react-icons/io5";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const SIZES = [290, 260, 320];
-const RADIUS_X = 42; // % of screen width from center
-const RADIUS_Y = 40; // % of screen height from center
+const RADIUS_X = 42; 
+const RADIUS_Y = 40; 
 
 const buildSlots = (count) =>
   Array.from({ length: count }, (_, i) => {
@@ -49,8 +58,23 @@ const SCROLL_PER_PROJECT = 250;
 const SHADOW_LIFTED = "0px 50px 70px 0px rgba(0, 0, 0, 0.45)";
 const SHADOW_RESTING = "0px 12px 24px 0px rgba(0, 0, 0, 0.4)";
 
+/* =========================================
+   MAIN SECTION
+========================================= */
+
 export default function PortFolioProjects() {
   const sectionRef = useRef(null);
+  const [mounted, setMounted] = useState(false);
+  const [lightbox, setLightbox] = useState(null); // { p: projectIndex, i: imageIndex }
+
+  useEffect(() => setMounted(true), []);
+
+  const openLightbox = (p, i) => setLightbox({ p, i });
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+  const changeImage = useCallback(
+    (i) => setLightbox((lb) => (lb ? { ...lb, i } : lb)),
+    []
+  );
 
   useLayoutEffect(() => {
     const mm = gsap.matchMedia();
@@ -119,18 +143,11 @@ export default function PortFolioProjects() {
           }
 
           /* ---------- BACKGROUND CROSSFADE ---------- */
-          // Starts as soon as the previous project begins leaving
-
           if (!isFirst && bg) {
-            tl.to(
-              bg,
-              { autoAlpha: 1, duration: 1, ease: "none" },
-              `exit${p - 1}`
-            );
+            tl.to(bg, { autoAlpha: 1, duration: 1, ease: "none" }, `exit${p - 1}`);
           }
 
           /* ---------- TEXT IN ---------- */
-
           if (isFirst) {
             tl.from(
               text.querySelector(".ppj_description"),
@@ -146,7 +163,6 @@ export default function PortFolioProjects() {
           }
 
           /* ---------- PHASE 1: CARDS SLIDE IN ---------- */
-
           const exitXs = [];
           const exitYs = [];
 
@@ -183,7 +199,6 @@ export default function PortFolioProjects() {
           });
 
           /* ---------- PHASE 2: CARDS MOVE INWARD ---------- */
-
           tl.to(cards, {
             x: (i) => finalX(slots[i]),
             y: (i) => finalY(slots[i]),
@@ -194,7 +209,6 @@ export default function PortFolioProjects() {
           tl.to({}, { duration: 0.6 });
 
           /* ---------- EXIT (not for the last project) ---------- */
-
           if (!isLast) {
             const exitLabel = `exit${p}`;
             tl.addLabel(exitLabel);
@@ -230,89 +244,112 @@ export default function PortFolioProjects() {
     return () => mm.revert();
   }, []);
 
+  const activeProject = lightbox ? projects[lightbox.p] : null;
+
   return (
-    <section ref={sectionRef} className="portfolio_projects_section">
-      {/* LIQUID GLASS SVG FILTER (invisible, used by CSS) */}
-      <svg
-        width="0"
-        height="0"
-        style={{ position: "absolute" }}
-        aria-hidden="true"
-      >
-        <defs>
-          <filter
-            id="ppj-glass-distortion"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            colorInterpolationFilters="sRGB"
-          >
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.008 0.008"
-              numOctaves="2"
-              seed="92"
-              result="noise"
-            />
-            <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
-            <feDisplacementMap
-              in="SourceGraphic"
-              in2="blurred"
-              scale="120"
-              xChannelSelector="R"
-              yChannelSelector="G"
-            />
-          </filter>
-        </defs>
-      </svg>
+    <>
+      <section ref={sectionRef} className="portfolio_projects_section">
+        {/* LIQUID GLASS SVG FILTER (invisible, used by CSS) */}
+        <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
+          <defs>
+            <filter
+              id="ppj-glass-distortion"
+              x="0%"
+              y="0%"
+              width="100%"
+              height="100%"
+              colorInterpolationFilters="sRGB"
+            >
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.008 0.008"
+                numOctaves="2"
+                seed="92"
+                result="noise"
+              />
+              <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="blurred"
+                scale="120"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </defs>
+        </svg>
 
-      {/* BACKGROUNDS: one per project, stacked and crossfaded */}
-      <div className="ppj_bgs" aria-hidden="true">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="ppj_bg"
-            style={{ backgroundImage: `url(${project.desk_bg_img })` }}
-          />
-        ))}
-      </div>
-
-      {/* CARDS: one group per project, one card per image */}
-      {projects.map((project) => {
-        const projectSlots = buildSlots(project.images.length);
-        return (
-          <div key={project.id} className="ppj_group">
-            {project.images.map((src, i) => (
-              <div
-                key={i}
-                className="ppj_card"
-                style={{ "--w": `${projectSlots[i].size}px` }}
-              >
-                <img
-                  src={src}
-                  alt={`${project.label} project image ${i + 1}`}
-                />
-              </div>
-            ))}
-          </div>
-        );
-      })}
-
-      {/* TEXT: one liquid glass panel per project */}
-      {projects.map((project) => (
-        <div key={project.id} className="ppj_center">
-          <div className="ppj_lable_logo">
-            <img
-              src={project.logo_img}
-              alt={`${project.heading} logo`}
-              className="ppj_logo_img"
+        {/* BACKGROUNDS: one per project, stacked and crossfaded */}
+        <div className="ppj_bgs" aria-hidden="true">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="ppj_bg"
+              style={{ backgroundImage: `url(${project.desk_bg_img})` }}
             />
-            <h2 className="ppj_heading">{project.heading}</h2>
-          </div>
-          <p className="ppj_description">{project.description}</p>
+          ))}
         </div>
-      ))}
-    </section>
+
+        {/* CARDS: one group per project, one card per image (clickable) */}
+        {projects.map((project, p) => {
+          const projectSlots = buildSlots(project.images.length);
+          return (
+            <div key={project.id} className="ppj_group">
+              {project.images.map((src, i) => (
+                <div
+                  key={i}
+                  className="ppj_card"
+                  style={{ "--w": `${projectSlots[i].size}px` }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Open ${project.heading} image ${i + 1}`}
+                  onClick={() => openLightbox(p, i)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      openLightbox(p, i);
+                    }
+                  }}
+                >
+                  <img
+                    src={src}
+                    alt={`${project.label} project image ${i + 1}`}
+                    draggable={false}
+                  />
+                </div>
+              ))}
+            </div>
+          );
+        })}
+
+        {/* TEXT: one liquid glass panel per project */}
+        {projects.map((project) => (
+          <div key={project.id} className="ppj_center">
+            <div className="ppj_lable_logo">
+              <img
+                src={project.logo_img}
+                alt={`${project.heading} logo`}
+                className="ppj_logo_img"
+              />
+              <h2 className="ppj_heading">{project.heading}</h2>
+            </div>
+            <p className="ppj_description">{project.description}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* GALLERY rendered on <body> so the pinned/transformed section can't break position:fixed */}
+      {mounted &&
+        activeProject &&
+        createPortal(
+          <Lightbox
+            project={activeProject}
+            index={lightbox.i}
+            onClose={closeLightbox}
+            onChange={changeImage}
+          />,
+          document.body
+        )}
+    </>
   );
 }

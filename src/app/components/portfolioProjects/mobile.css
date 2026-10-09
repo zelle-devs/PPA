@@ -149,3 +149,13 @@
   transform-origin: left center;
   transform: scaleX(0);
 }
+
+.ppm_card {
+  cursor: zoom-in;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+.ppm_card img {
+  user-select: none;
+  -webkit-user-drag: none;
+}

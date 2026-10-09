@@ -326,7 +326,7 @@ export default function Footer() {
               className={`hero-button hero-button-primary sp`}
             >
 
-             Start Project
+             START A PROJECT
 
                 <span>
                  ↗
